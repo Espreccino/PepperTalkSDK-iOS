@@ -114,7 +114,7 @@ Pod::Spec.new do |s|
   s.frameworks = "Accelerate", "AssetsLibrary", "CoreData", "CoreGraphics", "CoreImage", "CoreLocation", "Foundation", "ImageIO", "MapKit", "MessageUI", "MobileCoreServices", "QuartzCore", "Security", "SystemConfiguration", "UIKit"
 
   # s.library   = "iconv"
-  # s.libraries = "icucore"
+  s.libraries = "icucore"
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
