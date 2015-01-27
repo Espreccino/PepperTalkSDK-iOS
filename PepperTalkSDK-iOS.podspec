@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   #
 
   s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
   s.author             = { "Himanshu Retarekar" => "himanshu@espreccino.com" }
   # Or just: s.author    = "Espreccino"
   # s.authors            = { "Espreccino" => "info@espreccino.com" }
-  s.social_media_url   = "himanshu@espreccino.com"
+  s.social_media_url   = "https://www.linkedin.com/in/hretarekar"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
