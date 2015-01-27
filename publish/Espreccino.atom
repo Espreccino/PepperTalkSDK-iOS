@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
+    <id>http://espreccino.com/Espreccino/Espreccino.atom/20150127211901</id>
+    <title type="text">PepperTalk Documentation</title>
+    <rights>Copyright © 2015 Espreccino. All rights reserved.</rights>
+    <link rel="self" href="http://espreccino.com/Espreccino/Espreccino.atom"></link>
+    <docset:publisherName>Espreccino</docset:publisherName>
+    <docset:publisherID>com.espreccino.documentation</docset:publisherID>
+    <updated>2015-01-27T21:19:01+05:30</updated>
+    <entry>
+        <id>tag:espreccino.com,2015-01-27:com.espreccino.PepperTalk/1.0.0</id>
+        <title type="text">PepperTalk Documentation</title>
+        <updated>2015-01-27T21:19:01+05:30</updated>
+        <content type="text">PepperTalk Documentation (v1.0.0)</content>
+        <link rel="enclosure" type="application/octet-stream" href="http:/espreccino.com/Espreccino/com.espreccino.PepperTalk-1.0.xar" length="64816"></link>
+        <docset:identifier>com.espreccino.PepperTalk</docset:identifier>
+        <docset:version>1.0.0</docset:version>
+        <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>
+    </entry>
+</feed>

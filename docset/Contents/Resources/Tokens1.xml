@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/PepperTalk.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/PepperTalk</TokenIdentifier>
+			<Abstract type="html">This is the go to class for developers. Most of the functionality of the kit is exposed through this class.</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/setClientId:</TokenIdentifier>
+			<Abstract type="html">Pass clientId to identify the client app</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *clientId</Declaration>
+			
+			
+			<Anchor>//api/name/clientId</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/clientId</TokenIdentifier>
+			<Abstract type="html">Pass clientId to identify the client app</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *clientId</Declaration>
+			
+			
+			<Anchor>//api/name/clientId</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PepperTalk/clientId</TokenIdentifier>
+			<Abstract type="html">Pass clientId to identify the client app</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *clientId</Declaration>
+			
+			
+			<Anchor>//api/name/clientId</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/setClientSecret:</TokenIdentifier>
+			<Abstract type="html">Pass clientSecret to authorize the client app to use the kit</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *clientSecret</Declaration>
+			
+			
+			<Anchor>//api/name/clientSecret</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/clientSecret</TokenIdentifier>
+			<Abstract type="html">Pass clientSecret to authorize the client app to use the kit</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *clientSecret</Declaration>
+			
+			
+			<Anchor>//api/name/clientSecret</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PepperTalk/clientSecret</TokenIdentifier>
+			<Abstract type="html">Pass clientSecret to authorize the client app to use the kit</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSString *clientSecret</Declaration>
+			
+			
+			<Anchor>//api/name/clientSecret</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/setDeviceToken:</TokenIdentifier>
+			<Abstract type="html">To receive remote notifications, pass deviceToken to PepperTalk</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSData *deviceToken</Declaration>
+			
+			
+			<Anchor>//api/name/deviceToken</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/deviceToken</TokenIdentifier>
+			<Abstract type="html">To receive remote notifications, pass deviceToken to PepperTalk</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSData *deviceToken</Declaration>
+			
+			
+			<Anchor>//api/name/deviceToken</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PepperTalk/deviceToken</TokenIdentifier>
+			<Abstract type="html">To receive remote notifications, pass deviceToken to PepperTalk</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy) NSData *deviceToken</Declaration>
+			
+			
+			<Anchor>//api/name/deviceToken</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/setLoggedInParticipant:</TokenIdentifier>
+			<Abstract type="html">Query loggedInParticipant to check for valid login credentials</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *loggedInParticipant</Declaration>
+			
+			
+			<Anchor>//api/name/loggedInParticipant</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/loggedInParticipant</TokenIdentifier>
+			<Abstract type="html">Query loggedInParticipant to check for valid login credentials</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *loggedInParticipant</Declaration>
+			
+			
+			<Anchor>//api/name/loggedInParticipant</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PepperTalk/loggedInParticipant</TokenIdentifier>
+			<Abstract type="html">Query loggedInParticipant to check for valid login credentials</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *loggedInParticipant</Declaration>
+			
+			
+			<Anchor>//api/name/loggedInParticipant</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/setGlobalConfigurator:</TokenIdentifier>
+			<Abstract type="html">Use globalConfigurator object to set configuration properties at app level instead of per object level</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSObject&lt;PTChatSessionAppearanceProtocol&gt; *globalConfigurator</Declaration>
+			
+			
+			<Anchor>//api/name/globalConfigurator</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/globalConfigurator</TokenIdentifier>
+			<Abstract type="html">Use globalConfigurator object to set configuration properties at app level instead of per object level</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSObject&lt;PTChatSessionAppearanceProtocol&gt; *globalConfigurator</Declaration>
+			
+			
+			<Anchor>//api/name/globalConfigurator</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/PepperTalk/globalConfigurator</TokenIdentifier>
+			<Abstract type="html">Use globalConfigurator object to set configuration properties at app level instead of per object level</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSObject&lt;PTChatSessionAppearanceProtocol&gt; *globalConfigurator</Declaration>
+			
+			
+			<Anchor>//api/name/globalConfigurator</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/PepperTalk/sharedInstance</TokenIdentifier>
+			<Abstract type="html">PepperTalk instance creation</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">A singleton instance of PepperTalk class. Use this instance to avail kit functionality.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/setLoggedInUserWithUsername:fullName:profilePicture:completion:</TokenIdentifier>
+			<Abstract type="html">Pass logged in user information to PepperTalk</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSError *)setLoggedInUserWithUsername:(NSString *)username fullName:(NSString *)fullName profilePicture:(NSString *)profilePicture completion:(void ( ^ ) ( NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>username</Name>
+					<Abstract type="html">The logged in user&apos;s username</Abstract>
+				</Parameter><Parameter>
+					<Name>fullName</Name>
+					<Abstract type="html">The logged in user&apos;s full name</Abstract>
+				</Parameter><Parameter>
+					<Name>profilePicture</Name>
+					<Abstract type="html">The logged in user&apos;s profile picture url</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion callback with results of operation</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns the error. Nil if the operation could complete</Abstract></ReturnValue>
+			<Anchor>//api/name/setLoggedInUserWithUsername:fullName:profilePicture:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/presentChatSessionWithParticipant:sessionOptons:presentingViewController:</TokenIdentifier>
+			<Abstract type="html">Present chat session view modally</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSError *)presentChatSessionWithParticipant:(NSString *)participant sessionOptons:(NSDictionary *)options presentingViewController:(UIViewController *)presentingViewController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>participant</Name>
+					<Abstract type="html">Pass username of the user with whom chat session is to be initiated</Abstract>
+				</Parameter><Parameter>
+					<Name>options</Name>
+					<Abstract type="html">Pass additional configurable options for the chat session. Currently we only support PTSessionOptionTopicId and PTSessionOptionTopicTitle options.</Abstract>
+				</Parameter><Parameter>
+					<Name>presentingViewController</Name>
+					<Abstract type="html">Pass the view controller which will be used to present the chat session modally</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns the error. Nil if the operation could complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/presentChatSessionWithParticipant:sessionOptons:presentingViewController:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/chatSessionWithParticipant:sessionOptons:error:</TokenIdentifier>
+			<Abstract type="html">Create and return chat session view</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (PTChatSessionController *)chatSessionWithParticipant:(NSString *)participant sessionOptons:(NSDictionary *)options error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>participant</Name>
+					<Abstract type="html">Pass username of the user with whom chat session is to be initiated</Abstract>
+				</Parameter><Parameter>
+					<Name>options</Name>
+					<Abstract type="html">Pass additional configurable options for the chat session. Currently we only support PTSessionOptionTopicId and PTSessionOptionTopicTitle options.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">If an error occurs, the error parameter will be set and the return value will be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of UIViewController which confirms to PTChatSessionAppearanceProtocol which you can use to customize the chatsession view</Abstract></ReturnValue>
+			<Anchor>//api/name/chatSessionWithParticipant:sessionOptons:error:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/handleRemoteNotification:presentingViewController:</TokenIdentifier>
+			<Abstract type="html">Forward the received remote notification to PepperTalk to be handled by us</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)handleRemoteNotification:(NSDictionary *)notification presentingViewController:(UIViewController *)presentingViewController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>notification</Name>
+					<Abstract type="html">The dictionary containing the received notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>presentingViewController</Name>
+					<Abstract type="html">Pass the view controller which will be used to present handled notification</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If notification is handled by PepperTalk, returns YES else returns NO</Abstract></ReturnValue>
+			<Anchor>//api/name/handleRemoteNotification:presentingViewController:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/presentAllTopicsFilterByParticipants:presentingViewController:</TokenIdentifier>
+			<Abstract type="html">Show list of topics under which you have had conversation with participant</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSError *)presentAllTopicsFilterByParticipants:(NSArray *)participants presentingViewController:(UIViewController *)presentingViewController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>participants</Name>
+					<Abstract type="html">List of participants which are to be applied as filter while showing topics.
+Pass nil to disable filter</Abstract>
+				</Parameter><Parameter>
+					<Name>presentingViewController</Name>
+					<Abstract type="html">Pass the view controller which will be used to present handled notification</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns the error. Nil if the operation could complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/presentAllTopicsFilterByParticipants:presentingViewController:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/allTopicsFilterByParticipants:error:</TokenIdentifier>
+			<Abstract type="html">Get view which shows list of topics under which you have had conversation with participant</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (UIViewController *)allTopicsFilterByParticipants:(NSArray *)participants error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>participants</Name>
+					<Abstract type="html">List of participants which are to be applied as filter while showing topics.
+Pass nil to disable filter</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">If an error occurs, the error parameter will be set and the return value will be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns nil. View if the operation could complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/allTopicsFilterByParticipants:error:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/presentAllParticipantsFilterByTopics:presentingViewController:</TokenIdentifier>
+			<Abstract type="html">Show list of participants with whom you have had conversation for this topic</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSError *)presentAllParticipantsFilterByTopics:(NSArray *)topicIds presentingViewController:(UIViewController *)presentingViewController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>topicIds</Name>
+					<Abstract type="html">List of topicsIds which are to be applied as filter while showing participants.
+Pass nil to disable filter</Abstract>
+				</Parameter><Parameter>
+					<Name>presentingViewController</Name>
+					<Abstract type="html">Pass the view controller which will be used to present handled notification</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns the error. Nil if the operation could complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/presentAllParticipantsFilterByTopics:presentingViewController:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/allParticipantsFilterByTopics:error:</TokenIdentifier>
+			<Abstract type="html">Get view which shows list of participants with whom you have had conversation for this topic</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (UIViewController *)allParticipantsFilterByTopics:(NSArray *)topicIds error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>topicIds</Name>
+					<Abstract type="html">List of topicsIds which are to be applied as filter while showing participants.
+Pass nil to disable filter</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">If an error occurs, the error parameter will be set and the return value will be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns nil. View if the operation could complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/allParticipantsFilterByTopics:error:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/createGroupWithId:name:profilePicture:members:completion:</TokenIdentifier>
+			<Abstract type="html">Create a new group</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSError *)createGroupWithId:(NSString *)groupId name:(NSString *)groupName profilePicture:(NSString *)profilePicture members:(NSArray *)members completion:(void ( ^ ) ( NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>groupId</Name>
+					<Abstract type="html">The id which you would like to use for the new group. It should contain a prefix &apos;grp:&apos;. E.g &apos;grp:usc_friends&apos;</Abstract>
+				</Parameter><Parameter>
+					<Name>groupName</Name>
+					<Abstract type="html">The name you would like to use for the group &quot;USC College Friends&quot;</Abstract>
+				</Parameter><Parameter>
+					<Name>profilePicture</Name>
+					<Abstract type="html">The groups profile picture url</Abstract>
+				</Parameter><Parameter>
+					<Name>members</Name>
+					<Abstract type="html">Array of member&apos;s user ids.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion callback with results of operation</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns the error. Nil if the operation could complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/createGroupWithId:name:profilePicture:members:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/updateGroupWithId:name:profilePicture:completion:</TokenIdentifier>
+			<Abstract type="html">Update group properties</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSError *)updateGroupWithId:(NSString *)groupId name:(NSString *)newName profilePicture:(NSString *)newProfilePicture completion:(void ( ^ ) ( NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>groupId</Name>
+					<Abstract type="html">The id of the group which you would like to update</Abstract>
+				</Parameter><Parameter>
+					<Name>newName</Name>
+					<Abstract type="html">Set newName if you would like to update name of the group. If set to nil, will not update the name</Abstract>
+				</Parameter><Parameter>
+					<Name>newProfilePicture</Name>
+					<Abstract type="html">Set profilePicture if you would like to update profile pic of the group. If set to nil, will not update the profile pic.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion callback with results of operation</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns the error. Nil if the operation could complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/updateGroupWithId:name:profilePicture:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/addMembers:toGroupWithId:completion:</TokenIdentifier>
+			<Abstract type="html">Add members to group</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSError *)addMembers:(NSArray *)newMembers toGroupWithId:(NSString *)groupId completion:(void ( ^ ) ( NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>newMembers</Name>
+					<Abstract type="html">Pass array of user ids which are to be added as group members</Abstract>
+				</Parameter><Parameter>
+					<Name>groupId</Name>
+					<Abstract type="html">The id of the group which you would like to update</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion callback with results of operation</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns the error. Nil if the operation could complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/addMembers:toGroupWithId:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/removeMembers:fromGroupWithId:completion:</TokenIdentifier>
+			<Abstract type="html">Remove members from group</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSError *)removeMembers:(NSArray *)membersToBeRemoved fromGroupWithId:(NSString *)groupId completion:(void ( ^ ) ( NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>membersToBeRemoved</Name>
+					<Abstract type="html">Pass array of user ids which are to be removed as group members</Abstract>
+				</Parameter><Parameter>
+					<Name>groupId</Name>
+					<Abstract type="html">The id of the group which you would like to update</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion callback with results of operation</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns the error. Nil if the operation could complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/removeMembers:fromGroupWithId:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/deleteGroupWithId:completion:</TokenIdentifier>
+			<Abstract type="html">Delete group</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSError *)deleteGroupWithId:(NSString *)groupId completion:(void ( ^ ) ( NSError *))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>groupId</Name>
+					<Abstract type="html">The id of the group which you would like to update</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion callback with results of operation</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns the error. Nil if the operation could complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/deleteGroupWithId:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/unreadNotificationCountForTopic:filterByParticipants:</TokenIdentifier>
+			<Abstract type="html">Get unread notifications count for a topic</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)unreadNotificationCountForTopic:(NSString *)topicId filterByParticipants:(NSArray *)participants</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>topicId</Name>
+					<Abstract type="html">The topicId whose unread notifications count is to be returned</Abstract>
+				</Parameter><Parameter>
+					<Name>participants</Name>
+					<Abstract type="html">List of participants which are to be applied as filter while showing unread notifications count. Pass nil to disable filter</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">List of participant:unreadCount tuple. Nil if the operation could not complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/unreadNotificationCountForTopic:filterByParticipants:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/unreadNotificationCountForParticipant:filterByTopics:</TokenIdentifier>
+			<Abstract type="html">Get unread notifications count for a participant</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)unreadNotificationCountForParticipant:(NSString *)participant filterByTopics:(NSArray *)topicIds</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>participant</Name>
+					<Abstract type="html">The participant whose unread notifications count is to be returned</Abstract>
+				</Parameter><Parameter>
+					<Name>topicIds</Name>
+					<Abstract type="html">List of topics which are to be applied as filter while showing unread notifications count. Pass nil to disable filter</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">List of topicId:unreadCount tuple. Nil if the operation could not complete successfully</Abstract></ReturnValue>
+			<Anchor>//api/name/unreadNotificationCountForParticipant:filterByTopics:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/enableInAppNotificationsInViewController:</TokenIdentifier>
+			<Abstract type="html">Use this method to enable in-app notification. Disabled by default</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (void)enableInAppNotificationsInViewController:(UIViewController *)presentingViewController</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>presentingViewController</Name>
+					<Abstract type="html">Pass the view controller which will be used to present in-app notifications. PepperTalk will retain the presentingViewController. Disable in-app notifications to release presentingViewController</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/enableInAppNotificationsInViewController:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/disableInAppNotifications</TokenIdentifier>
+			<Abstract type="html">Use this method to disable in-app notification.</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (void)disableInAppNotifications</Declaration>
+			
+			
+			<Anchor>//api/name/disableInAppNotifications</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/PepperTalk/sendCustomData:withText:toParticipant:sessionOptons:completion:</TokenIdentifier>
+			<Abstract type="html">Use this method to send custom message to any participant user or group. The client at the other end will get a notification PTReceivedCustomDataNotification. The notification info can be queried for custom data, sender and timestamp. Use PTReceivedCustomDataNotificationCustomDataKey, PTReceivedCustomDataNotificationFromKey, PTReceivedCustomDataNotification_TimestampKey respectively to query.</Abstract>
+			<DeclaredIn>PepperTalk.h</DeclaredIn>
+			
+			<Declaration>- (NSError *)sendCustomData:(NSDictionary *)customData withText:(NSString *)notificationText toParticipant:(NSString *)participant sessionOptons:(NSDictionary *)options completion:(void ( ^ ) ( NSError *err ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>customData</Name>
+					<Abstract type="html">Data to be passed to participant client. Only supported format is JSON</Abstract>
+				</Parameter><Parameter>
+					<Name>notificationText</Name>
+					<Abstract type="html">Text that will be shown in remote notifications. If text is set to nil, notification will not be sent out.</Abstract>
+				</Parameter><Parameter>
+					<Name>participant</Name>
+					<Abstract type="html">The participant whose clients should get the callback with the custom data</Abstract>
+				</Parameter><Parameter>
+					<Name>options</Name>
+					<Abstract type="html">Pass additional configurable options for the chat session. Currently we only support PTSessionOption_TopicId for this call.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion callback with results of operation</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If operation could not be completed, it returns the error. Nil if the operation could complete</Abstract></ReturnValue>
+			<Anchor>//api/name/sendCustomData:withText:toParticipant:sessionOptons:completion:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

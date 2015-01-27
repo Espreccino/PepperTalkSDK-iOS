@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/PTChatSessionAppearanceProtocol.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/PTChatSessionAppearanceProtocol</TokenIdentifier>
+			<Abstract type="html">Implement this protocol to be able to customize chat UI.</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PTChatSessionAppearanceProtocol/setOutgoingBubbleColor:</TokenIdentifier>
+			<Abstract type="html">Set outgoingBubbleColor to customize the outgoing message&apos;s bubble color</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *outgoingBubbleColor</Declaration>
+			
+			
+			<Anchor>//api/name/outgoingBubbleColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PTChatSessionAppearanceProtocol/outgoingBubbleColor</TokenIdentifier>
+			<Abstract type="html">Set outgoingBubbleColor to customize the outgoing message&apos;s bubble color</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *outgoingBubbleColor</Declaration>
+			
+			
+			<Anchor>//api/name/outgoingBubbleColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PTChatSessionAppearanceProtocol/outgoingBubbleColor</TokenIdentifier>
+			<Abstract type="html">Set outgoingBubbleColor to customize the outgoing message&apos;s bubble color</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *outgoingBubbleColor</Declaration>
+			
+			
+			<Anchor>//api/name/outgoingBubbleColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PTChatSessionAppearanceProtocol/setIncomingBubbleColor:</TokenIdentifier>
+			<Abstract type="html">Set incomingBubbleColor to customize the incoming message&apos;s bubble color</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *incomingBubbleColor</Declaration>
+			
+			
+			<Anchor>//api/name/incomingBubbleColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PTChatSessionAppearanceProtocol/incomingBubbleColor</TokenIdentifier>
+			<Abstract type="html">Set incomingBubbleColor to customize the incoming message&apos;s bubble color</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *incomingBubbleColor</Declaration>
+			
+			
+			<Anchor>//api/name/incomingBubbleColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PTChatSessionAppearanceProtocol/incomingBubbleColor</TokenIdentifier>
+			<Abstract type="html">Set incomingBubbleColor to customize the incoming message&apos;s bubble color</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *incomingBubbleColor</Declaration>
+			
+			
+			<Anchor>//api/name/incomingBubbleColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PTChatSessionAppearanceProtocol/setActionToolbarBarTintColor:</TokenIdentifier>
+			<Abstract type="html">Set action toolbar&apos;s barTintColor</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *actionToolbarBarTintColor</Declaration>
+			
+			
+			<Anchor>//api/name/actionToolbarBarTintColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PTChatSessionAppearanceProtocol/actionToolbarBarTintColor</TokenIdentifier>
+			<Abstract type="html">Set action toolbar&apos;s barTintColor</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *actionToolbarBarTintColor</Declaration>
+			
+			
+			<Anchor>//api/name/actionToolbarBarTintColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PTChatSessionAppearanceProtocol/actionToolbarBarTintColor</TokenIdentifier>
+			<Abstract type="html">Set action toolbar&apos;s barTintColor</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *actionToolbarBarTintColor</Declaration>
+			
+			
+			<Anchor>//api/name/actionToolbarBarTintColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PTChatSessionAppearanceProtocol/setActionToolbarTintColor:</TokenIdentifier>
+			<Abstract type="html">Set action toolbar&apos;s tint color</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *actionToolbarTintColor</Declaration>
+			
+			
+			<Anchor>//api/name/actionToolbarTintColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/PTChatSessionAppearanceProtocol/actionToolbarTintColor</TokenIdentifier>
+			<Abstract type="html">Set action toolbar&apos;s tint color</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *actionToolbarTintColor</Declaration>
+			
+			
+			<Anchor>//api/name/actionToolbarTintColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/PTChatSessionAppearanceProtocol/actionToolbarTintColor</TokenIdentifier>
+			<Abstract type="html">Set action toolbar&apos;s tint color</Abstract>
+			<DeclaredIn>PTChatSessionProtocols.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIColor *actionToolbarTintColor</Declaration>
+			
+			
+			<Anchor>//api/name/actionToolbarTintColor</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
