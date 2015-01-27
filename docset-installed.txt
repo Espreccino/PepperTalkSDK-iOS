@@ -1,4 +1,0 @@
-Documentation set was installed to Xcode!
-
-Path: /Users/himanshuretarekar/Library/Developer/Shared/Documentation/DocSets/com.espreccino.PepperTalk.docset
-Time: 2015-01-27 15:49:01 +0000
