@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PepperTalkSDK-iOS"
-  s.version      = "1.0.6-beta.1"
+  s.version      = "1.0.7-beta.1"
   s.summary      = "PepperTalkSDK-iOS provides support for implementing PepperTalk in your iOS Application."
 
   s.description  = <<-DESC
@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/Espreccino/PepperTalkSDK-iOS.git", tag: "1.0.6-beta.1" }
+  s.source       = { :git => "https://github.com/Espreccino/PepperTalkSDK-iOS.git", tag: "1.0.7-beta.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
