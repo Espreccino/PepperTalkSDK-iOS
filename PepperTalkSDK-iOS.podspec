@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
                    Pepper is an SDK for iOS and Android that enables Businesses and App owners embed Rich Chat messaging into their Mobile Apps in 5 minutes! It is also customizable to the look and feel of the parent apps.
                    DESC
 
-  s.homepage     = "http://espreccino.com/#peppersdk"
+  s.homepage     = "https://github.com/Espreccino/PepperTalkSDK-iOS"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
