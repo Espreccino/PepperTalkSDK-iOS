@@ -11,7 +11,7 @@ PepperTalkSDK-iOS
 
 The primary purpose of the SDK is to make it easy to use the PepperTalk platform. It provides functionality to initiate chat between two clients. Read below for additional information, or check out the [complete documentation](http://espreccino.github.io/PepperTalkSDK-iOS/) for a look at all the classes available with the SDK.
 
-The recommended way to access the PepperKit-iOS SDK is through [CocoaDocs](http://cocoadocs.org/docsets/PepperTalkSDK-iOS).
+The recommended way to access the PepperTalkSDK-iOS is through [CocoaDocs](http://cocoadocs.org/docsets/PepperTalkSDK-iOS).
 
 This document contains the following sections:
 
