@@ -19,6 +19,7 @@ This document contains the following sections:
 - [Download & Extract](#download)
 - [Xcode Setup](#xcode) 
 - [Modify Code](#modify)
+- [Integration Examples](#examples)
 
 <a id="requirements"></a> 
 ## Requirements
@@ -102,3 +103,8 @@ The SDK runs on devices with iOS 7.0 or higher.
       * `[[PepperTalk sharedInstance] handleRemoteNotification:userInfo presentingViewController:self.window.rootViewController];`
 
 6. Starting with iOS 8, to enable location sharing in PepperTalk, you must set a string for the key `NSLocationWhenInUseUsageDescription` or `NSLocationAlwaysUsageDescription` in your app's Info.plist file. For more information refer [Apple Documentation](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18). If neither of the keys are found in the client's Info.plist file, then the location sharing opiton will not be available.
+
+<a id="examples"></a> 
+## Integration Examples
+
+Examples showing Pepper Talk integration can be found at [PepperTalkSDK-iOS-Examples](https://github.com/Espreccino/PepperTalkSDK-iOS-Examples) repository
