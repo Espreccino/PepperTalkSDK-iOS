@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="http://espreccino.getpeppertalk.com/images/logo.png" />
+  <img src="http://espreccino.com/images/pepper-black-500.png" />
 </p>
 
 PepperTalkSDK-iOS
