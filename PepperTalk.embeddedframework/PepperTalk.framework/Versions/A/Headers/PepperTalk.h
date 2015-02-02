@@ -10,8 +10,6 @@
 #import "PepperTalkConstants.h"
 #import "PTChatSessionProtocols.h"
 
-typedef UIViewController<PTChatSessionAppearanceProtocol> PTChatSessionController;
-
 /** This is the go to class for developers. Most of the functionality of the kit is exposed through this class.
  */
 @interface PepperTalk : NSObject
@@ -72,7 +70,7 @@ typedef UIViewController<PTChatSessionAppearanceProtocol> PTChatSessionControlle
  @param error If an error occurs, the error parameter will be set and the return value will be nil.
  @return An instance of UIViewController which confirms to PTChatSessionAppearanceProtocol which you can use to customize the chatsession view
  */
-- (PTChatSessionController *) chatSessionWithParticipant:(NSString *)participant
+- (UIViewController<PTChatSessionAppearanceProtocol> *) chatSessionWithParticipant:(NSString *)participant
                                      sessionOptons:(NSDictionary *)options
                                              error:(NSError **)error;
 
