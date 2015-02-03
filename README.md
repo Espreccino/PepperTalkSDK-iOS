@@ -25,6 +25,12 @@ This document contains the following sections:
 ## Requirements
 
 The SDK runs on devices with iOS 7.0 or higher.
+To test the SDK you will need clientId & clientSecret so that PepperTalk can authenticate your application. Follow these steps to generate clientId & clientSecret:
+    * Create an account at https://pepperkitdash.herokuapp.com/dashboard
+    * Kindly validate your email address by clicking on the link you get in your email inbox.
+    * Create a new application by selecting the "New Application" option from the menu on left hand side.
+    * Fill out the Application Description and press Submit
+    * Go to clients section and find the clientId & clientSecret there.
 
 <a id="download"></a> 
 ## Download the SDK
