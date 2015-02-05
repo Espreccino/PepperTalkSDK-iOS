@@ -26,8 +26,9 @@
 /** Query loggedInParticipant to check for valid login credentials*/
 @property (nonatomic, readonly) NSString *loggedInParticipant;
 
-/** Use globalConfigurator object to set configuration properties at app level instead of per object level*/
-@property (nonatomic, readonly) NSObject<PTChatSessionAppearanceProtocol> *globalConfigurator;
+/** Use globalConfigurator object to set configuration properties at app level */
+@property (nonatomic, readonly) NSObject<PTChatSessionGlobalConfigurationProtocol> *globalConfigurator;
+
 /**
  PepperTalk instance creation
  
@@ -68,9 +69,9 @@
  @param participant Pass username of the user with whom chat session is to be initiated
  @param options Pass additional configurable options for the chat session. Currently we only support PTSessionOption_TopicId and PTSessionOption_TopicTitle options.
  @param error If an error occurs, the error parameter will be set and the return value will be nil.
- @return An instance of UIViewController which confirms to PTChatSessionAppearanceProtocol which you can use to customize the chatsession view
+ @return An instance of UIViewController which can be shown on screen in any way.
  */
-- (UIViewController<PTChatSessionAppearanceProtocol> *) chatSessionWithParticipant:(NSString *)participant
+- (UIViewController *) chatSessionWithParticipant:(NSString *)participant
                                      sessionOptons:(NSDictionary *)options
                                              error:(NSError **)error;
 
@@ -241,6 +242,7 @@ extern NSString *const PTUnreadCountQueryUnreadCountKey;
 //Custom Messages
 /**
  Use this method to send custom message to any participant user or group. The client at the other end will get a notification PTReceivedCustomDataNotification. The notification info can be queried for custom data, sender and timestamp. Use PTReceivedCustomDataNotification_CustomDataKey, PTReceivedCustomDataNotification_FromKey, PTReceivedCustomDataNotification_TimestampKey respectively to query.
+ Max allowed size for custom data is 2KB.
  
  @param customData Data to be passed to participant client. Only supported format is JSON
  @param notificationText Text that will be shown in remote notifications. If text is set to nil, notification will not be sent out.
@@ -254,5 +256,21 @@ extern NSString *const PTUnreadCountQueryUnreadCountKey;
                toParticipant:(NSString *)participant
                sessionOptons:(NSDictionary *)options
                   completion:(void(^)(NSError * err))completion;
+
+/**
+ Use this method to send custom message to any participant user or group in chat stream. The client on other end can then show a custom view inside the chat interface.
+ Max allowed size for custom data is 2KB.
+ @param customData Data to be passed to participant client. Only supported format is JSON
+ @param notificationText Text that will be shown in remote notifications. If text is set to nil, notification will not be sent out.
+ @param participant The participant whose clients should get the callback with the custom data
+ @param options Pass additional configurable options for the chat session. Currently we only support PTSessionOption_TopicId for this call.
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete.
+ */
+- (NSError *) sendCustomDataInChatStream:(NSDictionary *)customData
+                                 withText:(NSString *)notificationText
+                            toParticipant:(NSString *)participant
+                            sessionOptons:(NSDictionary *)options
+                               completion:(void(^)(NSError * err))completion;
 
 @end

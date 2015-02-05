@@ -9,9 +9,16 @@
 #ifndef PepperTalk_PTChatSessionProtocols_h
 #define PepperTalk_PTChatSessionProtocols_h
 
-/** Implement this protocol to be able to customize chat UI.
+/** Implement this protocol to be able to provide a view for rendering custom data in chat stream uitableviewcell
  */
-@protocol PTChatSessionAppearanceProtocol <NSObject>
+@protocol PTChatSessionCustomDataRendererProtocol <NSObject>
+
+- (UIView *) viewForMessageWithCustomData:(NSDictionary *)customData;
+@end
+
+/** Implement this protocol to be able to set configure chat session globally.
+ */
+@protocol PTChatSessionGlobalConfigurationProtocol <NSObject>
 
 /** Set outgoingBubbleColor to customize the outgoing message's bubble color */
 @property (strong, nonatomic) UIColor *outgoingBubbleColor;
@@ -25,6 +32,7 @@
 /** Set action toolbar's tint color */
 @property (strong, nonatomic) UIColor *actionToolbarTintColor;
 
+@property (assign, nonatomic) id<PTChatSessionCustomDataRendererProtocol> customDataRenderer;
 @end
 
 #endif
