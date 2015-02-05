@@ -89,6 +89,8 @@
 	
 	<option value="//api/name/sendCustomData:withText:toParticipant:sessionOptons:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- sendCustomData:withText:toParticipant:sessionOptons:completion:</option>
 	
+	<option value="//api/name/sendCustomDataInChatStream:withText:toParticipant:sessionOptons:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- sendCustomDataInChatStream:withText:toParticipant:sessionOptons:completion:</option>
+	
 	<option value="//api/name/setLoggedInUserWithUsername:fullName:profilePicture:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- setLoggedInUserWithUsername:fullName:profilePicture:completion:</option>
 	
 	<option value="//api/name/unreadNotificationCountForParticipant:filterByTopics:">&nbsp;&nbsp;&nbsp;&nbsp;- unreadNotificationCountForParticipant:filterByTopics:</option>
@@ -172,6 +174,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeMembers:fromGroupWithId:completion:">removeMembers:fromGroupWithId:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendCustomData:withText:toParticipant:sessionOptons:completion:">sendCustomData:withText:toParticipant:sessionOptons:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendCustomDataInChatStream:withText:toParticipant:sessionOptons:completion:">sendCustomDataInChatStream:withText:toParticipant:sessionOptons:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLoggedInUserWithUsername:fullName:profilePicture:completion:">setLoggedInUserWithUsername:fullName:profilePicture:completion:</a></span></li>
 	
@@ -378,6 +382,12 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendCustomDataInChatStream:withText:toParticipant:sessionOptons:completion:">&ndash;&nbsp;sendCustomDataInChatStream:withText:toParticipant:sessionOptons:completion:</a></code>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -506,12 +516,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Use globalConfigurator object to set configuration properties at app level instead of per object level</p>
+		<p>Use globalConfigurator object to set configuration properties at app level</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSObject&lt;PTChatSessionAppearanceProtocol&gt; *globalConfigurator</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSObject&lt;PTChatSessionGlobalConfigurationProtocol&gt; *globalConfigurator</code></div>
 
     
 	
@@ -820,7 +830,7 @@ Pass nil to disable filter</p></dd>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (PTChatSessionController *)chatSessionWithParticipant:(NSString *)<em>participant</em> sessionOptons:(NSDictionary *)<em>options</em> error:(NSError **)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (UIViewController *)chatSessionWithParticipant:(NSString *)<em>participant</em> sessionOptons:(NSDictionary *)<em>options</em> error:(NSError **)<em>error</em></code></div>
 
     
 	
@@ -848,7 +858,7 @@ Pass nil to disable filter</p></dd>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An instance of UIViewController which confirms to <a href="../Protocols/PTChatSessionAppearanceProtocol.html">PTChatSessionAppearanceProtocol</a> which you can use to customize the chatsession view</p>
+		<p>An instance of UIViewController which can be shown on screen in any way.</p>
 	</div>
 	
 	
@@ -1377,7 +1387,8 @@ Pass nil to disable filter</p></dd>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Use this method to send custom message to any participant user or group. The client at the other end will get a notification PTReceivedCustomDataNotification. The notification info can be queried for custom data, sender and timestamp. Use PTReceivedCustomDataNotification_CustomDataKey, PTReceivedCustomDataNotification_FromKey, PTReceivedCustomDataNotification_TimestampKey respectively to query.</p>
+		<p>Use this method to send custom message to any participant user or group. The client at the other end will get a notification PTReceivedCustomDataNotification. The notification info can be queried for custom data, sender and timestamp. Use PTReceivedCustomDataNotification_CustomDataKey, PTReceivedCustomDataNotification_FromKey, PTReceivedCustomDataNotification_TimestampKey respectively to query.
+Max allowed size for custom data is 2KB.</p>
 	</div>		
 	
     
@@ -1421,6 +1432,78 @@ Pass nil to disable filter</p></dd>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>If operation could not be completed, it returns the error. Nil if the operation could complete</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PepperTalk.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendCustomDataInChatStream:withText:toParticipant:sessionOptons:completion:" title="sendCustomDataInChatStream:withText:toParticipant:sessionOptons:completion:"></a>
+	<h3 class="subsubtitle method-title">sendCustomDataInChatStream:withText:toParticipant:sessionOptons:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Use this method to send custom message to any participant user or group in chat stream. The client on other end can then show a custom view inside the chat interface.
+Max allowed size for custom data is 2KB.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSError *)sendCustomDataInChatStream:(NSDictionary *)<em>customData</em> withText:(NSString *)<em>notificationText</em> toParticipant:(NSString *)<em>participant</em> sessionOptons:(NSDictionary *)<em>options</em> completion:(void ( ^ ) ( NSError *err ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>customData</em></dt>
+			<dd><p>Data to be passed to participant client. Only supported format is JSON</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notificationText</em></dt>
+			<dd><p>Text that will be shown in remote notifications. If text is set to nil, notification will not be sent out.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>participant</em></dt>
+			<dd><p>The participant whose clients should get the callback with the custom data</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>Pass additional configurable options for the chat session. Currently we only support PTSessionOption_TopicId for this call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion callback with results of operation</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If operation could not be completed, it returns the error. Nil if the operation could complete.</p>
 	</div>
 	
 	
@@ -1703,7 +1786,7 @@ Pass nil to disable filter</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Espreccino. All rights reserved. (Last updated: 2015-01-27)</span><br />
+						<p><span class="copyright">&copy; 2015 Espreccino. All rights reserved. (Last updated: 2015-02-05)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
