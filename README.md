@@ -38,7 +38,7 @@ This page contains the following sections:
 <a id="requirements"></a> 
 # Requirements
 
-* The SDK runs on devices with iOS 7.0 or higher.
+* This SDK is compatible with applications running on devices with iOS 7.0 or higher.
 
 <a id="sdkintegration"></a> 
 # SDK Integration
