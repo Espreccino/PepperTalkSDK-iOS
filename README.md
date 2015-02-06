@@ -128,9 +128,9 @@ Generate Client ID & Client Secret to authenticate your application with PepperT
 
 <a id="documentation"></a> 
 # SDK Documentation
-Find the PepperTalkSDK-iOS SDK documentation [here](http://cocoadocs.org/docsets/PepperTalkSDK-iOS).
+Find the PepperTalkSDK-iOS SDK documentation [here](http://espreccino.github.io/PepperTalkSDK-iOS).
 
 <a id="examples"></a> 
 # Integration Examples
 
-Examples showing Pepper Talk integration can be found at [PepperTalkSDK-iOS-Examples](https://github.com/Espreccino/PepperTalkSDK-iOS-Examples) repository
+Examples showing Pepper Talk integration can be found at [PepperTalkSDK-iOS-Examples](https://github.com/Espreccino/PepperTalkSDK-iOS-Examples) repository.
