@@ -36,7 +36,7 @@ This page contains the following sections:
 - [Integration Examples](#examples)
 
 <a id="requirements"></a> 
-## Requirements
+# Requirements
 
 * The SDK runs on devices with iOS 7.0 or higher.
 
@@ -89,12 +89,14 @@ This page contains the following sections:
     - `icucore`
 
 ## Generate ClientID and Client Secret
-To test the SDK you will need clientId & clientSecret so that PepperTalk can authenticate your application. Follow these steps to generate clientId & clientSecret:
-* Create an account at [PepperTalk Console](https://console.getpeppertalk.com)
-* Kindly validate your email address by clicking on the link you get in your email inbox.
-* Create a new application by selecting the "New Application" option from the menu on left hand side.
-* Fill out the Application Description and press Submit
-* Go to clients section and find the clientId & clientSecret there.
+Generate Client ID & Client Secret to authenticate your application with PepperTalk. Follow these steps to generate Client ID & Client Secret:
+* Go to [PepperTalk Console](https://console.getpeppertalk.com/dashboard/signup)
+* Fill in the details and signup
+* Validate your email address by clicking on the link you get in your email inbox
+* Create a new application by selecting the "New Application" option from the menu on left hand side
+* Enter the Application Description
+* Optionally, select and enter push notification related information to support remote OS notifications
+* Find Client ID & Client Secret in the 'Clients' tab on your application page
 
 ## Modify Code 
 
@@ -125,10 +127,10 @@ To test the SDK you will need clientId & clientSecret so that PepperTalk can aut
 6. Starting with iOS 8, to enable location sharing in PepperTalk, you must set a string for the key `NSLocationWhenInUseUsageDescription` or `NSLocationAlwaysUsageDescription` in your app's Info.plist file. For more information refer [Apple Documentation](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18). If neither of the keys are found in the client's Info.plist file, then the location sharing opiton will not be available.
 
 <a id="documentation"></a> 
-## SDK Documentation
-The recommended way to access the PepperTalkSDK-iOS SDK docu is through [CocoaDocs](http://cocoadocs.org/docsets/PepperTalkSDK-iOS).
+# SDK Documentation
+Find the PepperTalkSDK-iOS SDK documentation [here](http://cocoadocs.org/docsets/PepperTalkSDK-iOS).
 
 <a id="examples"></a> 
-## Integration Examples
+# Integration Examples
 
 Examples showing Pepper Talk integration can be found at [PepperTalkSDK-iOS-Examples](https://github.com/Espreccino/PepperTalkSDK-iOS-Examples) repository
