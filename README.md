@@ -31,9 +31,7 @@ The primary purpose of the SDK is to allow developers to embed in-app chat messa
 
 This page contains the following sections:
 - [Requirements](#requirements)
-- [Download & Extract](#download)
-- [Xcode Setup](#xcode) 
-- [Modify Code](#modify)
+- [SDK Integration](#sdkintegration)
 - [SDK Documentation](#documentation)
 - [Integration Examples](#examples)
 
@@ -41,27 +39,20 @@ This page contains the following sections:
 ## Requirements
 
 * The SDK runs on devices with iOS 7.0 or higher.
-* To test the SDK you will need clientId & clientSecret so that PepperTalk can authenticate your application. Follow these steps to generate clientId & clientSecret:
-    * Create an account at [PepperTalk Console](https://console.getpeppertalk.com)
-    * Kindly validate your email address by clicking on the link you get in your email inbox.
-    * Create a new application by selecting the "New Application" option from the menu on left hand side.
-    * Fill out the Application Description and press Submit
-    * Go to clients section and find the clientId & clientSecret there.
 
-<a id="download"></a> 
-## Download the SDK
-
-1. (Manual) 
+<a id="sdkintegration"></a> 
+# SDK Integration
+## Download SDK
+1. Manual 
     * Download PepperTalk.embeddedframework and Dependencies Resources from github.
     * Move the folders into your project directory. We usually put 3rd-party code into a subdirectory named `Vendor`, so we move the directory into it.
   
-2. (Cocoapods)
+2. Cocoapods
     * Install Cocoapods, if already not installed
     * Add "pod PepperTalkSDK-iOS" to your podfile
     * Run pod install
   
-<a id="xcode"></a> 
-## Xcode Setup (Skip step if using CocoaPods)
+## Xcode Setup (Skip this step if using CocoaPods)
 
 1. Drag & drop `PepperTalk.embeddedframework` from your project directory to your Xcode project.
 
@@ -97,7 +88,14 @@ This page contains the following sections:
 9. Add the following libraries, if they are missing;
     - `icucore`
 
-<a id="modify"></a> 
+## Generate ClientID and Client Secret
+To test the SDK you will need clientId & clientSecret so that PepperTalk can authenticate your application. Follow these steps to generate clientId & clientSecret:
+* Create an account at [PepperTalk Console](https://console.getpeppertalk.com)
+* Kindly validate your email address by clicking on the link you get in your email inbox.
+* Create a new application by selecting the "New Application" option from the menu on left hand side.
+* Fill out the Application Description and press Submit
+* Go to clients section and find the clientId & clientSecret there.
+
 ## Modify Code 
 
 ### Objective-C
