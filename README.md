@@ -134,3 +134,7 @@ Find the PepperTalkSDK-iOS SDK documentation [here](http://espreccino.github.io/
 # Integration Examples
 
 Examples showing Pepper Talk integration can be found at [PepperTalkSDK-iOS-Examples](https://github.com/Espreccino/PepperTalkSDK-iOS-Examples) repository.
+
+
+#Support
+In case you have any question regarding PepperTalk SDK, please contact us at info@espreccino.com
