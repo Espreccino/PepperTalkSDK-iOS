@@ -44,8 +44,8 @@ This page contains the following sections:
 # SDK Integration
 ## Download SDK
 1. Manual 
-    * Download PepperTalk.embeddedframework and Dependencies Resources from github.
-    * Move the folders into your project directory. We usually put 3rd-party code into a subdirectory named `Vendor`, so we move the directory into it.
+    * Download [PepperTalk.embeddedframework](https://github.com/Espreccino/PepperTalkSDK-iOS/tree/master/PepperTalk.embeddedframework) framework and [Dependencies Resources](https://github.com/Espreccino/PepperTalkSDK-iOS/tree/master/Dependencies%20Resources) folder from github
+    * Move the content into your project directory. We usually put 3rd-party code into a subdirectory named `Vendor`
   
 2. Cocoapods
     * Install Cocoapods, if already not installed
