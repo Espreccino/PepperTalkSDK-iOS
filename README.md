@@ -2,23 +2,39 @@
   <img src="http://i.imgur.com/aRaC5Yp.png" />
 </p>
 
-PepperTalkSDK-iOS
+PepperTalkSDK-iOS Overview
 =============
+The primary purpose of the SDK is to allow developers to embed in-app chat messaging in iOS applications. It lets you add the following functionalities:
 
-[PepperTalkSDK-iOS](http://espreccino.getpeppertalk.com) allows developers to develop apps that integrate the PepperTalk functionality in their apps.
+* 1-1 and Group Chat
+* Broadcast Messaging
+* Photo and Location Sharing Via Chat
+* Custom Data Support
+* Real-Time Peer-To-Peer Data Stream
+* OS Chat Notifications
+* In-App Chat Notifications
+* Status Indicators
+	* Message Sent, Delivered, Read & Failure Receipts
+	* Typing Indicator
+	* Network Status
+* Cross Platform Support (iOS, Android & Web)
+* Multi Device Message Sync
+* UI
+	* Chat Screen With Bubble UI
+	* Photo Selection Interface
+	* Location Selection Interface
+	* Chat Participants Screen
+	* Chat Topics Screen
+* UI Customization
+	* Chat Bubbles Color
+	* Navigation Bar Color
 
-# Overview
-
-The primary purpose of the SDK is to make it easy to use the PepperTalk platform. It provides functionality to initiate chat between two clients. Read below for additional information, or check out the [complete documentation](http://espreccino.github.io/PepperTalkSDK-iOS/) for a look at all the classes available with the SDK.
-
-The recommended way to access the PepperTalkSDK-iOS is through [CocoaDocs](http://cocoadocs.org/docsets/PepperTalkSDK-iOS).
-
-This document contains the following sections:
-
+This page contains the following sections:
 - [Requirements](#requirements)
 - [Download & Extract](#download)
 - [Xcode Setup](#xcode) 
 - [Modify Code](#modify)
+- [SDK Documentation](#documentation)
 - [Integration Examples](#examples)
 
 <a id="requirements"></a> 
@@ -109,6 +125,10 @@ This document contains the following sections:
       * `[[PepperTalk sharedInstance] handleRemoteNotification:userInfo presentingViewController:self.window.rootViewController];`
 
 6. Starting with iOS 8, to enable location sharing in PepperTalk, you must set a string for the key `NSLocationWhenInUseUsageDescription` or `NSLocationAlwaysUsageDescription` in your app's Info.plist file. For more information refer [Apple Documentation](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18). If neither of the keys are found in the client's Info.plist file, then the location sharing opiton will not be available.
+
+<a id="documentation"></a> 
+## SDK Documentation
+The recommended way to access the PepperTalkSDK-iOS SDK docu is through [CocoaDocs](http://cocoadocs.org/docsets/PepperTalkSDK-iOS).
 
 <a id="examples"></a> 
 ## Integration Examples
