@@ -13,6 +13,10 @@
  */
 @protocol PTChatSessionCustomDataRendererProtocol <NSObject>
 
+/** Actual view to be shown inside chat stream for given customData 
+ @param customData customData passed by client on the other end in chat stream
+ @return UIView which is to be rendered inside chat stream for given custom data
+ */
 - (UIView *) viewForMessageWithCustomData:(NSDictionary *)customData;
 @end
 
@@ -32,6 +36,9 @@
 /** Set action toolbar's tint color */
 @property (strong, nonatomic) UIColor *actionToolbarTintColor;
 
+/** Set a custom renderer object which confirms to PTChatSessionCustomDataRendererProtocol in order
+ to provide view for custom data in chat stream
+ */
 @property (assign, nonatomic) id<PTChatSessionCustomDataRendererProtocol> customDataRenderer;
 @end
 

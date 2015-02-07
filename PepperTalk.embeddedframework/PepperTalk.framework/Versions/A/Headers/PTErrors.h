@@ -11,6 +11,7 @@
 // Domains for PTErrors
 extern NSString *const kPTGeneralErrorDomain;
 
+/** Base value of errors */
 typedef NS_ENUM(NSInteger, PTErrorBases) {
     
     PTGeneralErrorBase   = 2000,
