@@ -2,50 +2,57 @@
   <img src="http://i.imgur.com/aRaC5Yp.png" />
 </p>
 
-PepperTalkSDK-iOS
+PepperTalkSDK-iOS Overview
 =============
+The primary purpose of the SDK is to allow developers to embed in-app chat messaging in iOS applications. It lets you add the following functionalities:
 
-[PepperTalkSDK-iOS](http://espreccino.getpeppertalk.com) allows developers to develop apps that integrate the PepperTalk functionality in their apps.
+* 1-1 and Group Chat
+* Broadcast Messaging
+* Photo and Location Sharing Via Chat
+* Custom Data Support
+* Real-Time Peer-To-Peer Data Stream
+* OS Chat Notifications
+* In-App Chat Notifications
+* Status Indicators
+	* Message Sent, Delivered, Read & Failure Receipts
+	* Typing Indicator
+	* Network Status
+* Cross Platform Support (iOS, Android & Web)
+* Multi Device Message Sync
+* UI
+	* Chat Screen With Bubble UI
+	* Photo Selection Interface
+	* Location Selection Interface
+	* Chat Participants Screen
+	* Chat Topics Screen
+* UI Customization
+	* Chat Bubbles Color
+	* Navigation Bar Color
 
-# Overview
-
-The primary purpose of the SDK is to make it easy to use the PepperTalk platform. It provides functionality to initiate chat between two clients. Read below for additional information, or check out the [complete documentation](http://espreccino.github.io/PepperTalkSDK-iOS/) for a look at all the classes available with the SDK.
-
-The recommended way to access the PepperTalkSDK-iOS is through [CocoaDocs](http://cocoadocs.org/docsets/PepperTalkSDK-iOS).
-
-This document contains the following sections:
-
+This page contains the following sections:
 - [Requirements](#requirements)
-- [Download & Extract](#download)
-- [Xcode Setup](#xcode) 
-- [Modify Code](#modify)
+- [SDK Integration](#sdkintegration)
+- [SDK Documentation](#documentation)
 - [Integration Examples](#examples)
 
 <a id="requirements"></a> 
-## Requirements
+# Requirements
 
-* The SDK runs on devices with iOS 7.0 or higher.
-* To test the SDK you will need clientId & clientSecret so that PepperTalk can authenticate your application. Follow these steps to generate clientId & clientSecret:
-    * Create an account at [PepperTalk Console](https://console.getpeppertalk.com)
-    * Kindly validate your email address by clicking on the link you get in your email inbox.
-    * Create a new application by selecting the "New Application" option from the menu on left hand side.
-    * Fill out the Application Description and press Submit
-    * Go to clients section and find the clientId & clientSecret there.
+* This SDK is compatible with applications running on devices with iOS 7.0 or higher.
 
-<a id="download"></a> 
-## Download the SDK
-
-1. (Manual) 
-    * Download PepperTalk.embeddedframework and Dependencies Resources from github.
-    * Move the folders into your project directory. We usually put 3rd-party code into a subdirectory named `Vendor`, so we move the directory into it.
+<a id="sdkintegration"></a> 
+# SDK Integration
+## Download SDK
+1. Manual 
+    * Download [PepperTalk.embeddedframework](https://github.com/Espreccino/PepperTalkSDK-iOS/tree/master/PepperTalk.embeddedframework) framework and [Dependencies Resources](https://github.com/Espreccino/PepperTalkSDK-iOS/tree/master/Dependencies%20Resources) folder from github
+    * Move the content into your project directory. We usually put 3rd-party code into a subdirectory named `Vendor`
   
-2. (Cocoapods)
+2. Cocoapods
     * Install Cocoapods, if already not installed
     * Add "pod PepperTalkSDK-iOS" to your podfile
     * Run pod install
   
-<a id="xcode"></a> 
-## Xcode Setup (Skip step if using CocoaPods)
+## Xcode Setup (Skip this step if using CocoaPods)
 
 1. Drag & drop `PepperTalk.embeddedframework` from your project directory to your Xcode project.
 
@@ -81,7 +88,16 @@ This document contains the following sections:
 9. Add the following libraries, if they are missing;
     - `icucore`
 
-<a id="modify"></a> 
+## Generate ClientID and Client Secret
+Generate Client ID & Client Secret to authenticate your application with PepperTalk. Follow these steps to generate Client ID & Client Secret:
+* Go to [PepperTalk Console](https://console.getpeppertalk.com/dashboard/signup)
+* Fill in the details and signup
+* Validate your email address by clicking on the link you get in your email inbox
+* Create a new application by selecting the "New Application" option from the menu on left hand side
+* Enter the Application Description
+* Optionally, select and enter push notification related information to support remote OS notifications
+* Find Client ID & Client Secret in the 'Clients' tab on your application page
+
 ## Modify Code 
 
 ### Objective-C
@@ -110,7 +126,15 @@ This document contains the following sections:
 
 6. Starting with iOS 8, to enable location sharing in PepperTalk, you must set a string for the key `NSLocationWhenInUseUsageDescription` or `NSLocationAlwaysUsageDescription` in your app's Info.plist file. For more information refer [Apple Documentation](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18). If neither of the keys are found in the client's Info.plist file, then the location sharing opiton will not be available.
 
-<a id="examples"></a> 
-## Integration Examples
+<a id="documentation"></a> 
+# SDK Documentation
+Find the PepperTalkSDK-iOS SDK documentation [here](http://espreccino.github.io/PepperTalkSDK-iOS).
 
-Examples showing Pepper Talk integration can be found at [PepperTalkSDK-iOS-Examples](https://github.com/Espreccino/PepperTalkSDK-iOS-Examples) repository
+<a id="examples"></a> 
+# Integration Examples
+
+Examples showing Pepper Talk integration can be found at [PepperTalkSDK-iOS-Examples](https://github.com/Espreccino/PepperTalkSDK-iOS-Examples) repository.
+
+
+#Support
+In case you have any question regarding PepperTalk SDK, please contact us at info@espreccino.com
