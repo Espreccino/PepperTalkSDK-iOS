@@ -86,7 +86,7 @@ This page contains the following sections:
     - `UIKit`
 
 9. Add the following libraries, if they are missing;
-    - `icucore`
+    - `libicucore.dylib`
 
 ## Generate ClientID and Client Secret
 Generate Client ID & Client Secret to authenticate your application with PepperTalk. Follow these steps to generate Client ID & Client Secret:
