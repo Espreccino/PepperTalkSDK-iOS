@@ -4,7 +4,7 @@
 
 ## Quick Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KKVwovZq9wY" frameborder="0" allowfullscreen></iframe>
+[![Pepper Talk Demo](http://img.youtube.com/vi/KKVwovZq9wY/0.jpg)](http://www.youtube.com/watch?v=KKVwovZq9wY)
 
 PepperTalkSDK-iOS Overview
 =============
