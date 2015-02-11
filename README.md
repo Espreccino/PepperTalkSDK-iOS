@@ -2,6 +2,10 @@
   <img src="http://i.imgur.com/aRaC5Yp.png" />
 </p>
 
+## Quick Demo
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KKVwovZq9wY" frameborder="0" allowfullscreen></iframe>
+
 PepperTalkSDK-iOS Overview
 =============
 The primary purpose of the SDK is to allow developers to embed in-app chat messaging in iOS applications. It lets you add the following functionalities:
