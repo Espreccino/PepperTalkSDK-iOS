@@ -2,12 +2,12 @@
   <img src="http://i.imgur.com/aRaC5Yp.png" />
 </p>
 
-## Quick Demo
+# Quick Demo
 
 [![Pepper Talk Demo](http://img.youtube.com/vi/KKVwovZq9wY/0.jpg)](http://www.youtube.com/watch?v=KKVwovZq9wY)
 
-PepperTalkSDK-iOS Overview
-=============
+# PepperTalkSDK-iOS Overview
+
 The primary purpose of the SDK is to allow developers to embed in-app chat messaging in iOS applications. It lets you add the following functionalities:
 
 * 1-1 and Group Chat
@@ -40,13 +40,13 @@ This page contains the following sections:
 - [Integration Examples](#examples)
 
 <a id="requirements"></a> 
-# Requirements
+## Requirements
 
 * This SDK is compatible with applications running on devices with iOS 7.0 or higher.
 
 <a id="sdkintegration"></a> 
-# SDK Integration
-## Download SDK
+## SDK Integration
+### Download SDK
 1. Manual 
     * Download [PepperTalk.embeddedframework](https://github.com/Espreccino/PepperTalkSDK-iOS/tree/master/PepperTalk.embeddedframework) framework and [Dependencies Resources](https://github.com/Espreccino/PepperTalkSDK-iOS/tree/master/Dependencies%20Resources) folder from github
     * Move the content into your project directory. We usually put 3rd-party code into a subdirectory named `Vendor`
@@ -56,7 +56,7 @@ This page contains the following sections:
     * Add "pod PepperTalkSDK-iOS" to your podfile
     * Run pod install
   
-## Xcode Setup (Skip this step if using CocoaPods)
+### Xcode Setup (Skip this step if using CocoaPods)
 
 1. Drag & drop `PepperTalk.embeddedframework` from your project directory to your Xcode project.
 
@@ -92,7 +92,7 @@ This page contains the following sections:
 9. Add the following libraries, if they are missing;
     - `libicucore.dylib`
 
-## Generate ClientID and Client Secret
+### Generate ClientID and Client Secret
 Generate Client ID & Client Secret to authenticate your application with PepperTalk. Follow these steps to generate Client ID & Client Secret:
 * Go to [PepperTalk Console](https://console.getpeppertalk.com/dashboard/signup)
 * Fill in the details and signup
@@ -102,9 +102,9 @@ Generate Client ID & Client Secret to authenticate your application with PepperT
 * Optionally, select and enter push notification related information to support remote OS notifications
 * Find Client ID & Client Secret in the 'Clients' tab on your application page
 
-## Modify Code 
+### Modify Code 
 
-### Objective-C
+#### Objective-C
 1. Open your `AppDelegate.m` file.
 
 2. Add the following line at the top of the file below your own #import statements:
@@ -131,11 +131,11 @@ Generate Client ID & Client Secret to authenticate your application with PepperT
 6. Starting with iOS 8, to enable location sharing in PepperTalk, you must set a string for the key `NSLocationWhenInUseUsageDescription` or `NSLocationAlwaysUsageDescription` in your app's Info.plist file. For more information refer [Apple Documentation](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18). If neither of the keys are found in the client's Info.plist file, then the location sharing opiton will not be available.
 
 <a id="documentation"></a> 
-# SDK Documentation
+## SDK Documentation
 Find the PepperTalkSDK-iOS SDK documentation [here](http://espreccino.github.io/PepperTalkSDK-iOS).
 
 <a id="examples"></a> 
-# Integration Examples
+## Integration Examples
 
 Examples showing Pepper Talk integration can be found at [PepperTalkSDK-iOS-Examples](https://github.com/Espreccino/PepperTalkSDK-iOS-Examples) repository.
 
