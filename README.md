@@ -52,7 +52,7 @@ This page contains the following sections:
     * Move the content into your project directory. We usually put 3rd-party code into a subdirectory named `Vendor`
   
 2. Cocoapods
-    * Install Cocoapods, if already not installed
+    * If Cocoapods not installed, refer [Cocoapods Guide](http://guides.cocoapods.org/using/getting-started.html#installation) to install Cocoapods
     * Add "pod PepperTalkSDK-iOS" to your podfile
     * Run pod install
   
