@@ -110,8 +110,12 @@ This SDK is compatible with applications running on devices with iOS 7.0 or high
     - `SystemConfiguration`
     - `UIKit`
 
-9. Add the following libraries, if they are missing;
+9. Add the following libraries, if they are missing:
     - `libicucore.dylib`
+
+10. Select the tab `Build Settings`.
+
+11. Add -ObjC to Build Settings->Other Linker Flags if already not present
 
 ### Generate ClientID and Client Secret
 Generate Client ID & Client Secret to authenticate your application with PepperTalk. Follow these steps to generate Client ID & Client Secret:
