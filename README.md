@@ -174,7 +174,7 @@ PepperTalk authenticates client apps. Client Authentication is done by setting t
 	/** Pass clientId to identify the client app */
 	@property (nonatomic, copy) NSString *clientId;
 
-	/** Pass clientSecret to authorize the client app to use the kit*/
+	/** Pass clientSecret to authorize the client app to use PepperTalk SDK*/
 	@property (nonatomic, copy) NSString *clientSecret;
 ####Code Snippet
 	PepperTalk *pepperTalkInstance = [PepperTalk sharedInstance];
@@ -390,6 +390,28 @@ PepperTalk offers functionality to establish real time peer-peer data stream bet
 	               sessionOptons:(NSDictionary *)options
 	                  completion:(void(^)(NSError * err))completion;
 
+	/**
+	 Notification with name PTReceivedCustomDataNotification is posted to notify observers about incoming custom data. Notification userInfo has the following format:
+	 {
+	     PTReceivedCustomDataNotification_MsgDataKey : {
+	        PTReceivedCustomDataNotification_MsgData_ToKey : # custom data receipient id
+	        PTReceivedCustomDataNotification_MsgData_FromKey : # custom data sender id
+	        PTReceivedCustomDataNotification_MsgData_TimestampKey : # custom data timestamp in epoch milliseconds
+	        PTReceivedCustomDataNotification_MsgData_TopicIdKey : # topic id
+	        PTReceivedCustomDataNotification_MsgData_TopicTitleKey : topic title
+	     }
+	     PTReceivedCustomDataNotification_CustomDataKey : # actual custom data from other end in form of NSDictionary
+	 }
+	 */
+	extern NSString *const PTReceivedCustomDataNotification;
+	extern NSString *const PTReceivedCustomDataNotification_MsgDataKey;
+	extern NSString *const PTReceivedCustomDataNotification_MsgData_ToKey;
+	extern NSString *const PTReceivedCustomDataNotification_MsgData_FromKey;
+	extern NSString *const PTReceivedCustomDataNotification_MsgData_TimestampKey;
+	extern NSString *const PTReceivedCustomDataNotification_MsgData_TopicIdKey;
+	extern NSString *const PTReceivedCustomDataNotification_MsgData_TopicTitleKey;
+	extern NSString *const PTReceivedCustomDataNotification_CustomDataKey;
+
 <a id="pushnotifications"></a> 
 ##OS Push Notifications
 PepperTalk offers Remote Push Notification Support.  
@@ -508,6 +530,31 @@ We provide out of box UI for participants list. The participants list can be fil
 	 */
 	- (UIViewController *) allParticipantsFilterByTopics:(NSArray *)topicIds error:(NSError **)error;
 
+	/**
+	 Get list of participants with whom you have had conversation for these topics
+	 
+	 @param topicIds List of topicsIds which are to be applied as filter while showing participants.
+	 Pass nil to disable filter
+	 @param error If an error occurs, the error parameter will be set and the return value will be nil.
+	 @return If operation could not be completed, it returns nil. If operation succesfull find information in this format
+	 {
+	     # id of topic : {
+	         users : {
+	             # id of participant : {
+	                 count   : # total messages in this topic for this user
+	                 unread  : # total unread messages within those messages
+	                 last_message_timestamp: # unix timestamp in millis for the last message in them
+	                 user_name : # user name
+	                 user_id   : # id of the user
+	             }
+	         }
+	         topic_title : # description of the topic
+	         topic_id    : # id of the topic
+	     }
+	 }
+	 */
+	- (NSDictionary *) allParticipantsSummaryFilterByTopics:(NSArray *)topicIds error:(NSError **)error;
+
 <a id="topicslist"></a> 
 ##Topics List
 We provide out of box UI for topics list. The topics list can be filtered to show topics for certain participants only.
@@ -533,6 +580,32 @@ We provide out of box UI for topics list. The topics list can be filtered to sho
 	 */
 	- (UIViewController *) allTopicsFilterByParticipants:(NSArray *)participants error:(NSError **)error;
 
+	/**
+	
+	 Get list of topics under which you have had conversation with these participants
+	 
+	 @param participants List of participants which are to be applied as filter while showing topics.
+	 Pass nil to disable filter
+	 @param error If an error occurs, the error parameter will be set and the return value will be nil.
+	 @return If operation could not be completed, it returns nil. If operation succesfull find information in this format
+	 {
+	     # id of user : {
+	         topics : {
+	             # id of topic : {
+	                 count   : # total messages in this topic for this user
+	                 unread  : # total unread messages within those messages
+	                 last_message_timestamp: # unix timestamp in millis for the last message in them
+	                 topic_title : # description of the topic
+	                 topic_id    : # id of the topic
+	             }
+	         }
+	         user_name : # user name
+	         user_id   : # id of the user
+	     }
+	 }
+	 */
+	- (NSDictionary *) allTopicsSummaryFilterByParticipants:(NSArray *)participants error:(NSError **)error;
+
 <a id="unreadcount"></a> 
 ##Unread Count
 ###Unread Count For Conversation With A Participant
@@ -542,7 +615,14 @@ We provide out of box UI for topics list. The topics list can be filtered to sho
 	 
 	 @param participant The participant whose unread notifications count is to be returned
 	 @param topicIds List of topics which are to be applied as filter while showing unread notifications count. Pass nil to disable filter
-	 @return List of topicId:unreadCount tuple. Nil if the operation could not complete successfully
+	 @return Nil if the operation could not complete successfully. If operation succesfull, information returned is in following format:
+	 {
+	     PTUnreadCountQueryTopicsKey : {
+	         # topic id : # unread count for the topic,
+	         # topic id : # unread count for the topic,
+	     }
+	     PTUnreadCountQueryTotalUnreadCountKey : # total unread count across all topics
+	 }
 	 */
 	- (NSDictionary *) unreadNotificationCountForParticipant:(NSString *)participant
 	                                          filterByTopics:(NSArray *)topicIds;
@@ -554,10 +634,18 @@ We provide out of box UI for topics list. The topics list can be filtered to sho
 	 
 	 @param topicId The topicId whose unread notifications count is to be returned
 	 @param participants List of participants which are to be applied as filter while showing unread notifications count. Pass nil to disable filter
-	 @return List of participant:unreadCount tuple. Nil if the operation could not complete successfully
+	 @return Nil if the operation could not complete successfully. If operation succesfull, information returned is in following format:
+	 {
+	    PTUnreadCountQueryParticipantsKey : {
+	        # participant id : # unread count for the participant,
+	        # participant id : # unread count for the participant,
+	    }
+	    PTUnreadCountQueryTotalUnreadCountKey : # total unread count across all participants
+	 }
 	 */
 	- (NSDictionary *) unreadNotificationCountForTopic:(NSString *)topicId
 	                              filterByParticipants:(NSArray *)participants;
+
 
 <a id="changelog"></a> 
 #Changelog
