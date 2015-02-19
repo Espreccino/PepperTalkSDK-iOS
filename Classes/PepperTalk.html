@@ -65,7 +65,11 @@
 	
 	<option value="//api/name/allParticipantsFilterByTopics:error:">&nbsp;&nbsp;&nbsp;&nbsp;- allParticipantsFilterByTopics:error:</option>
 	
+	<option value="//api/name/allParticipantsSummaryFilterByTopics:error:">&nbsp;&nbsp;&nbsp;&nbsp;- allParticipantsSummaryFilterByTopics:error:</option>
+	
 	<option value="//api/name/allTopicsFilterByParticipants:error:">&nbsp;&nbsp;&nbsp;&nbsp;- allTopicsFilterByParticipants:error:</option>
+	
+	<option value="//api/name/allTopicsSummaryFilterByParticipants:error:">&nbsp;&nbsp;&nbsp;&nbsp;- allTopicsSummaryFilterByParticipants:error:</option>
 	
 	<option value="//api/name/chatSessionWithParticipant:sessionOptons:error:">&nbsp;&nbsp;&nbsp;&nbsp;- chatSessionWithParticipant:sessionOptons:error:</option>
 	
@@ -98,6 +102,8 @@
 	<option value="//api/name/unreadNotificationCountForTopic:filterByParticipants:">&nbsp;&nbsp;&nbsp;&nbsp;- unreadNotificationCountForTopic:filterByParticipants:</option>
 	
 	<option value="//api/name/updateGroupWithId:name:profilePicture:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- updateGroupWithId:name:profilePicture:completion:</option>
+	
+	<option value="//api/name/updateUserProfile:fullName:profilePicture:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- updateUserProfile:fullName:profilePicture:completion:</option>
 	
 	
 	
@@ -151,7 +157,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allParticipantsFilterByTopics:error:">allParticipantsFilterByTopics:error:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allParticipantsSummaryFilterByTopics:error:">allParticipantsSummaryFilterByTopics:error:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allTopicsFilterByParticipants:error:">allTopicsFilterByParticipants:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allTopicsSummaryFilterByParticipants:error:">allTopicsSummaryFilterByParticipants:error:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/chatSessionWithParticipant:sessionOptons:error:">chatSessionWithParticipant:sessionOptons:error:</a></span></li>
 	
@@ -184,6 +194,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unreadNotificationCountForTopic:filterByParticipants:">unreadNotificationCountForTopic:filterByParticipants:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateGroupWithId:name:profilePicture:completion:">updateGroupWithId:name:profilePicture:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateUserProfile:fullName:profilePicture:completion:">updateUserProfile:fullName:profilePicture:completion:</a></span></li>
 	
 </ul></li>
 
@@ -222,7 +234,9 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This is the go to class for developers. Most of the functionality of the kit is exposed through this class.</p>
+						<p>This is the main class of the Pepper Talk . Its the entry point into Pepper Talk.
+This class lets users initialize the SDK &amp; initiate chat session, access unreadcounts &amp; pass custom data
+between two or more endpoints.</p>
 					</div>
 					
 					
@@ -282,6 +296,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/updateUserProfile:fullName:profilePicture:completion:">&ndash;&nbsp;updateUserProfile:fullName:profilePicture:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/presentChatSessionWithParticipant:sessionOptons:presentingViewController:">&ndash;&nbsp;presentChatSessionWithParticipant:sessionOptons:presentingViewController:</a></code>
 	</span>
 	
@@ -312,6 +332,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/allTopicsSummaryFilterByParticipants:error:">&ndash;&nbsp;allTopicsSummaryFilterByParticipants:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/presentAllParticipantsFilterByTopics:presentingViewController:">&ndash;&nbsp;presentAllParticipantsFilterByTopics:presentingViewController:</a></code>
 	</span>
 	
@@ -319,6 +345,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/allParticipantsFilterByTopics:error:">&ndash;&nbsp;allParticipantsFilterByTopics:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allParticipantsSummaryFilterByTopics:error:">&ndash;&nbsp;allParticipantsSummaryFilterByTopics:error:</a></code>
 	</span>
 	
 	
@@ -444,7 +476,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Pass clientSecret to authorize the client app to use the kit</p>
+		<p>Pass clientSecret to authorize the client app to use PepperTalk SDK</p>
 	</div>		
 	
     
@@ -609,7 +641,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A singleton instance of PepperTalk class. Use this instance to avail kit functionality.</p>
+		<p>A singleton instance of PepperTalk class. Use this instance to use Pepper Talk.</p>
 	</div>
 	
 	
@@ -711,7 +743,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Get view which shows list of participants with whom you have had conversation for this topic</p>
+		<p>Get list of participants with whom you have had conversation for these topics</p>
 	</div>		
 	
     
@@ -741,6 +773,78 @@ Pass nil to disable filter</p></dd>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>If operation could not be completed, it returns nil. View if the operation could complete successfully</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PepperTalk.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allParticipantsSummaryFilterByTopics:error:" title="allParticipantsSummaryFilterByTopics:error:"></a>
+	<h3 class="subsubtitle method-title">allParticipantsSummaryFilterByTopics:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get list of participants with whom you have had conversation for these topics</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)allParticipantsSummaryFilterByTopics:(NSArray *)<em>topicIds</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>topicIds</em></dt>
+			<dd><p>List of topicsIds which are to be applied as filter while showing participants.
+Pass nil to disable filter</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>If an error occurs, the error parameter will be set and the return value will be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If operation could not be completed, it returns nil. If operation succesfull find information in this format
+{
+     # id of topic : {
+         users : {
+             # id of participant : {
+                 count   : # total messages in this topic for this user
+                 unread  : # total unread messages within those messages
+                 last_message_timestamp: # unix timestamp in millis for the last message in them
+                 user_name : # user name
+                 user_id   : # id of the user
+             }
+         }
+         topic_title : # description of the topic
+         topic_id    : # id of the topic
+     }
+}</p>
 	</div>
 	
 	
@@ -798,6 +902,78 @@ Pass nil to disable filter</p></dd>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>If operation could not be completed, it returns nil. View if the operation could complete successfully</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PepperTalk.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allTopicsSummaryFilterByParticipants:error:" title="allTopicsSummaryFilterByParticipants:error:"></a>
+	<h3 class="subsubtitle method-title">allTopicsSummaryFilterByParticipants:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get list of topics under which you have had conversation with these participants</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)allTopicsSummaryFilterByParticipants:(NSArray *)<em>participants</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>participants</em></dt>
+			<dd><p>List of participants which are to be applied as filter while showing topics.
+Pass nil to disable filter</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>If an error occurs, the error parameter will be set and the return value will be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If operation could not be completed, it returns nil. If operation succesfull find information in this format
+{
+     # id of user : {
+         topics : {
+             # id of topic : {
+                 count   : # total messages in this topic for this user
+                 unread  : # total unread messages within those messages
+                 last_message_timestamp: # unix timestamp in millis for the last message in them
+                 topic_title : # description of the topic
+                 topic_id    : # id of the topic
+             }
+         }
+         user_name : # user name
+         user_id   : # id of the user
+     }
+}</p>
 	</div>
 	
 	
@@ -1625,7 +1801,14 @@ Max allowed size for custom data is 2KB.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>List of topicId:unreadCount tuple. Nil if the operation could not complete successfully</p>
+		<p>Nil if the operation could not complete successfully. If operation succesfull, information returned is in following format:
+{
+     PTUnreadCountQueryTopicsKey : {
+         # topic id : # unread count for the topic,
+         # topic id : # unread count for the topic,
+     }
+     PTUnreadCountQueryTotalUnreadCountKey : # total unread count across all topics
+}</p>
 	</div>
 	
 	
@@ -1681,7 +1864,14 @@ Max allowed size for custom data is 2KB.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>List of participant:unreadCount tuple. Nil if the operation could not complete successfully</p>
+		<p>Nil if the operation could not complete successfully. If operation succesfull, information returned is in following format:
+{
+    PTUnreadCountQueryParticipantsKey : {
+        # participant id : # unread count for the participant,
+        # participant id : # unread count for the participant,
+    }
+    PTUnreadCountQueryTotalUnreadCountKey : # total unread count across all participants
+}</p>
 	</div>
 	
 	
@@ -1768,6 +1958,72 @@ Max allowed size for custom data is 2KB.</p>
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/updateUserProfile:fullName:profilePicture:completion:" title="updateUserProfile:fullName:profilePicture:completion:"></a>
+	<h3 class="subsubtitle method-title">updateUserProfile:fullName:profilePicture:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update user profile information</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSError *)updateUserProfile:(NSString *)<em>username</em> fullName:(NSString *)<em>updatedFullName</em> profilePicture:(NSString *)<em>updatedProfilePicture</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>username of the user whose information is to be updated</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updatedFullName</em></dt>
+			<dd><p>New Full name. Pass Nil if full name is not to be updated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updatedProfilePicture</em></dt>
+			<dd><p>New profile picture. Pass Nil if profile picture is not to be updated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion callback with results of operation</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If operation could not be completed, it returns the error. Nil if the operation could complete</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PepperTalk.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -1786,7 +2042,7 @@ Max allowed size for custom data is 2KB.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Espreccino. All rights reserved. (Last updated: 2015-02-05)</span><br />
+						<p><span class="copyright">&copy; 2015 Espreccino. All rights reserved. (Last updated: 2015-02-19)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
