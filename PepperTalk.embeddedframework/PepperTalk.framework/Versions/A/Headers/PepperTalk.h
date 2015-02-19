@@ -10,14 +10,16 @@
 #import "PepperTalkConstants.h"
 #import "PTChatSessionProtocols.h"
 
-/** This is the go to class for developers. Most of the functionality of the kit is exposed through this class.
+/** This is the main class of the Pepper Talk . Its the entry point into Pepper Talk.
+ This class lets users initialize the SDK & initiate chat session, access unreadcounts & pass custom data
+ between two or more endpoints.
  */
 @interface PepperTalk : NSObject
 
 /** Pass clientId to identify the client app */
 @property (nonatomic, copy) NSString *clientId;
 
-/** Pass clientSecret to authorize the client app to use the kit*/
+/** Pass clientSecret to authorize the client app to use PepperTalk SDK*/
 @property (nonatomic, copy) NSString *clientSecret;
 
 /** To receive remote notifications, pass deviceToken to PepperTalk*/
@@ -33,7 +35,7 @@
  PepperTalk instance creation
  
  Type of Result - PepperTalk singleton instance.
- @return A singleton instance of PepperTalk class. Use this instance to avail kit functionality.
+ @return A singleton instance of PepperTalk class. Use this instance to use Pepper Talk.
  */
 + (instancetype)sharedInstance;
 
@@ -50,6 +52,20 @@
                                  fullName:(NSString *)fullName
                            profilePicture:(NSString *)profilePicture
                           completion:(void(^)(NSError *))completion;
+
+/**
+ Update user profile information
+ 
+ @param username username of the user whose information is to be updated
+ @param updatedFullName New Full name. Pass Nil if full name is not to be updated.
+ @param updatedProfilePicture New profile picture. Pass Nil if profile picture is not to be updated.
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete
+ */
+- (NSError *) updateUserProfile:(NSString *)username
+                                 fullName:(NSString *)updatedFullName
+                           profilePicture:(NSString *)updatedProfilePicture
+                               completion:(void(^)(NSError *))completion;
 
 /**
  Present chat session view modally
@@ -107,6 +123,31 @@
 - (UIViewController *) allTopicsFilterByParticipants:(NSArray *)participants error:(NSError **)error;
 
 /**
+ Get list of topics under which you have had conversation with these participants
+ 
+ @param participants List of participants which are to be applied as filter while showing topics.
+ Pass nil to disable filter
+ @param error If an error occurs, the error parameter will be set and the return value will be nil.
+ @return If operation could not be completed, it returns nil. If operation succesfull find information in this format
+ {
+     # id of user : {
+         topics : {
+             # id of topic : {
+                 count   : # total messages in this topic for this user
+                 unread  : # total unread messages within those messages
+                 last_message_timestamp: # unix timestamp in millis for the last message in them
+                 topic_title : # description of the topic
+                 topic_id    : # id of the topic
+             }
+         }
+         user_name : # user name
+         user_id   : # id of the user
+     }
+ }
+ */
+- (NSDictionary *) allTopicsSummaryFilterByParticipants:(NSArray *)participants error:(NSError **)error;
+
+/**
  Show list of participants with whom you have had conversation for this topic
  
  @param topicIds List of topicsIds which are to be applied as filter while showing participants.
@@ -118,7 +159,7 @@
                       presentingViewController:(UIViewController *)presentingViewController;
 
 /**
- Get view which shows list of participants with whom you have had conversation for this topic
+ Get list of participants with whom you have had conversation for these topics
  
  @param topicIds List of topicsIds which are to be applied as filter while showing participants.
  Pass nil to disable filter
@@ -126,6 +167,31 @@
  @return If operation could not be completed, it returns nil. View if the operation could complete successfully
  */
 - (UIViewController *) allParticipantsFilterByTopics:(NSArray *)topicIds error:(NSError **)error;
+
+/**
+ Get list of participants with whom you have had conversation for these topics
+ 
+ @param topicIds List of topicsIds which are to be applied as filter while showing participants.
+ Pass nil to disable filter
+ @param error If an error occurs, the error parameter will be set and the return value will be nil.
+ @return If operation could not be completed, it returns nil. If operation succesfull find information in this format
+ {
+     # id of topic : {
+         users : {
+             # id of participant : {
+                 count   : # total messages in this topic for this user
+                 unread  : # total unread messages within those messages
+                 last_message_timestamp: # unix timestamp in millis for the last message in them
+                 user_name : # user name
+                 user_id   : # id of the user
+             }
+         }
+         topic_title : # description of the topic
+         topic_id    : # id of the topic
+     }
+ }
+ */
+- (NSDictionary *) allParticipantsSummaryFilterByTopics:(NSArray *)topicIds error:(NSError **)error;
 
 /**
  Create a new group
@@ -192,27 +258,20 @@
                      completion:(void(^)(NSError *))completion;
 
 /**
- Reserved keys which are used to get values from NSDictionary returned by
- - (NSDictionary *) unreadNotificationCountForTopic:(NSString *)topicId
- filterByParticipants:(NSArray *)participants;
- &
- - (NSDictionary *) unreadNotificationCountForParticipant:(NSString *)participant
- filterByTopics:(NSArray *)topicIds;
- */
-extern NSString *const PTUnreadCountQueryTotalUnreadCountKey;
-extern NSString *const PTUnreadCountQueryParticipantsKey;
-extern NSString *const PTUnreadCountQueryTopicsKey;
-extern NSString *const PTUnreadCountQueryTopicIdKey;
-extern NSString *const PTUnreadCountQueryParticipantKey;
-extern NSString *const PTUnreadCountQueryUnreadCountKey;
-
-/**
  Get unread notifications count for a topic
  
  @param topicId The topicId whose unread notifications count is to be returned
  @param participants List of participants which are to be applied as filter while showing unread notifications count. Pass nil to disable filter
- @return List of participant:unreadCount tuple. Nil if the operation could not complete successfully
+ @return Nil if the operation could not complete successfully. If operation succesfull, information returned is in following format:
+ {
+    PTUnreadCountQueryParticipantsKey : {
+        # participant id : # unread count for the participant,
+        # participant id : # unread count for the participant,
+    }
+    PTUnreadCountQueryTotalUnreadCountKey : # total unread count across all participants
+ }
  */
+
 - (NSDictionary *) unreadNotificationCountForTopic:(NSString *)topicId
                               filterByParticipants:(NSArray *)participants;
 
@@ -221,7 +280,14 @@ extern NSString *const PTUnreadCountQueryUnreadCountKey;
  
  @param participant The participant whose unread notifications count is to be returned
  @param topicIds List of topics which are to be applied as filter while showing unread notifications count. Pass nil to disable filter
- @return List of topicId:unreadCount tuple. Nil if the operation could not complete successfully
+ @return Nil if the operation could not complete successfully. If operation succesfull, information returned is in following format:
+ {
+     PTUnreadCountQueryTopicsKey : {
+         # topic id : # unread count for the topic,
+         # topic id : # unread count for the topic,
+     }
+     PTUnreadCountQueryTotalUnreadCountKey : # total unread count across all topics
+ }
  */
 - (NSDictionary *) unreadNotificationCountForParticipant:(NSString *)participant
                                           filterByTopics:(NSArray *)topicIds;
