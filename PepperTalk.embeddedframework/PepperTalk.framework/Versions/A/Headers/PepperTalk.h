@@ -28,6 +28,9 @@
 /** Query loggedInParticipant to check for valid login credentials*/
 @property (nonatomic, readonly) NSString *loggedInParticipant;
 
+/** Pass your Google API Key to enable Location sharing. If not set, location sharing option will not be available */
+@property (nonatomic, copy) NSString *googleAPIKey;
+
 /** Use globalConfigurator object to set configuration properties at app level */
 @property (nonatomic, readonly) NSObject<PTChatSessionGlobalConfigurationProtocol> *globalConfigurator;
 
@@ -194,7 +197,7 @@
 - (NSDictionary *) allParticipantsSummaryFilterByTopics:(NSArray *)topicIds error:(NSError **)error;
 
 /**
- Create a new group
+ Create a new closed group
  
  @param groupId The id which you would like to use for the new group. It should contain a prefix 'grp:'. E.g 'grp:usc_friends'
  @param groupName The name you would like to use for the group "USC College Friends"
@@ -208,6 +211,22 @@
                  profilePicture:(NSString *)profilePicture
                         members:(NSArray *)members
                      completion:(void(^)(NSError *))completion;
+
+/**
+ Create a new public group. Public groups are open to all the users and anybody can join the group.
+ 
+ @param groupId The id which you would like to use for the new group. It should contain a prefix 'grp:'. E.g 'grp:usc_friends'
+ @param groupName The name you would like to use for the group "USC College Friends"
+ @param profilePicture The groups profile picture url
+ @param members Array of member's user ids.
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) createPublicGroupWithId:(NSString *)groupId
+                                 name:(NSString *)groupName
+                       profilePicture:(NSString *)profilePicture
+                              members:(NSArray *)members
+                           completion:(void(^)(NSError *))completion;
 
 /**
  Update group properties
@@ -246,6 +265,46 @@
 - (NSError *) removeMembers:(NSArray *)membersToBeRemoved
             fromGroupWithId:(NSString *)groupId
                  completion:(void(^)(NSError *))completion;
+
+/**
+ Block a list of participants, users or groups. Once a participant is blocked none of the messages from that participant will be delivered to the user. If the participant is a group all messages to the group sent by anybody will be dropped.
+ 
+ @param participantsToBeBlocked Pass array of participants which are to be blocked
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) blockParticipants:(NSArray *)participantsToBeBlocked
+                     completion:(void(^)(NSError *))completion;
+
+/**
+ Unblock a list of participants, users or groups.
+ 
+ @param participantsToBeBlocked Pass array of participants which are to be unblocked
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) unblockParticipants:(NSArray *)participantsToBeUnblocked
+                       completion:(void(^)(NSError *))completion;
+
+/**
+ Mute a list of participants, users or groups. Once a participant is muted none of the messages from that participant will be notified, messages will be delivered to the users but remote notifications will be disabled.
+ 
+ @param participantsToBeMuted Pass array of participants which are to be muted
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) muteParticipants:(NSArray *)participantsToBeMuted
+                    completion:(void(^)(NSError *))completion;
+
+/**
+ Unmute a list of participants, users or groups.
+ 
+ @param participantsToBeUnmuted Pass array of participants which are to be unmuted
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) unmuteParticipants:(NSArray *)participantsToBeUnmuted
+                      completion:(void(^)(NSError *))completion;
 
 /**
  Delete group
