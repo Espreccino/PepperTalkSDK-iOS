@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="http://i.imgur.com/aRaC5Yp.png" />
+  <img src="http://getpeppertalk.com/images/logo.png" />
 </p>
 
 # Quick Demo
