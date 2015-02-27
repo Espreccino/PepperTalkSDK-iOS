@@ -416,6 +416,12 @@ between two or more endpoints.</p>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/deleteGroupWithId:completion:">&ndash;&nbsp;deleteGroupWithId:completion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/blockParticipants:completion:">&ndash;&nbsp;blockParticipants:completion:</a></code>
 	</span>
 	
@@ -435,12 +441,6 @@ between two or more endpoints.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/unmuteParticipants:completion:">&ndash;&nbsp;unmuteParticipants:completion:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/deleteGroupWithId:completion:">&ndash;&nbsp;deleteGroupWithId:completion:</a></code>
 	</span>
 	
 	
@@ -783,7 +783,7 @@ between two or more endpoints.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)addMembers:(NSArray *)<em>newMembers</em> toGroupWithId:(NSString *)<em>groupId</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)addMembers:(NSArray *)<em>newMembers</em> toGroupWithId:(NSString *)<em>groupId</em> completion:(void ( ^ ) ( NSDictionary *groupInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -1102,7 +1102,7 @@ Pass nil to disable filter</p></dd>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)blockParticipants:(NSArray *)<em>participantsToBeBlocked</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)blockParticipants:(NSArray *)<em>participantsToBeBlocked</em> completion:(void ( ^ ) ( NSDictionary *userInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -1219,7 +1219,7 @@ Pass nil to disable filter</p></dd>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)createGroupWithId:(NSString *)<em>groupId</em> name:(NSString *)<em>groupName</em> profilePicture:(NSString *)<em>profilePicture</em> members:(NSArray *)<em>members</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)createGroupWithId:(NSString *)<em>groupId</em> name:(NSString *)<em>groupName</em> profilePicture:(NSString *)<em>profilePicture</em> members:(NSArray *)<em>members</em> completion:(void ( ^ ) ( NSDictionary *groupInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -1290,7 +1290,7 @@ Pass nil to disable filter</p></dd>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)createPublicGroupWithId:(NSString *)<em>groupId</em> name:(NSString *)<em>groupName</em> profilePicture:(NSString *)<em>profilePicture</em> members:(NSArray *)<em>members</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)createPublicGroupWithId:(NSString *)<em>groupId</em> name:(NSString *)<em>groupName</em> profilePicture:(NSString *)<em>profilePicture</em> members:(NSArray *)<em>members</em> completion:(void ( ^ ) ( NSDictionary *groupInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -1361,7 +1361,7 @@ Pass nil to disable filter</p></dd>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)deleteGroupWithId:(NSString *)<em>groupId</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)deleteGroupWithId:(NSString *)<em>groupId</em> completion:(void ( ^ ) ( NSDictionary *groupInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -1555,7 +1555,7 @@ Pass nil to disable filter</p></dd>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)muteParticipants:(NSArray *)<em>participantsToBeMuted</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)muteParticipants:(NSArray *)<em>participantsToBeMuted</em> completion:(void ( ^ ) ( NSDictionary *userInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -1786,7 +1786,7 @@ Pass nil to disable filter</p></dd>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)removeMembers:(NSArray *)<em>membersToBeRemoved</em> fromGroupWithId:(NSString *)<em>groupId</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)removeMembers:(NSArray *)<em>membersToBeRemoved</em> fromGroupWithId:(NSString *)<em>groupId</em> completion:(void ( ^ ) ( NSDictionary *groupInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -1991,7 +1991,7 @@ Max allowed size for custom data is 2KB.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)setLoggedInUserWithUsername:(NSString *)<em>username</em> fullName:(NSString *)<em>fullName</em> profilePicture:(NSString *)<em>profilePicture</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)setLoggedInUserWithUsername:(NSString *)<em>username</em> fullName:(NSString *)<em>fullName</em> profilePicture:(NSString *)<em>profilePicture</em> completion:(void ( ^ ) ( NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -2057,7 +2057,7 @@ Max allowed size for custom data is 2KB.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)unblockParticipants:(NSArray *)<em>participantsToBeUnblocked</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)unblockParticipants:(NSArray *)<em>participantsToBeUnblocked</em> completion:(void ( ^ ) ( NSDictionary *userInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -2113,7 +2113,7 @@ Max allowed size for custom data is 2KB.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)unmuteParticipants:(NSArray *)<em>participantsToBeUnmuted</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)unmuteParticipants:(NSArray *)<em>participantsToBeUnmuted</em> completion:(void ( ^ ) ( NSDictionary *userInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -2295,7 +2295,7 @@ Max allowed size for custom data is 2KB.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)updateGroupWithId:(NSString *)<em>groupId</em> name:(NSString *)<em>newName</em> profilePicture:(NSString *)<em>newProfilePicture</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)updateGroupWithId:(NSString *)<em>groupId</em> name:(NSString *)<em>newName</em> profilePicture:(NSString *)<em>newProfilePicture</em> completion:(void ( ^ ) ( NSDictionary *groupInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
@@ -2361,7 +2361,7 @@ Max allowed size for custom data is 2KB.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSError *)updateUserProfile:(NSString *)<em>username</em> fullName:(NSString *)<em>updatedFullName</em> profilePicture:(NSString *)<em>updatedProfilePicture</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSError *)updateUserProfile:(NSString *)<em>username</em> fullName:(NSString *)<em>updatedFullName</em> profilePicture:(NSString *)<em>updatedProfilePicture</em> completion:(void ( ^ ) ( NSDictionary *userInfo , NSError *err ))<em>completion</em></code></div>
 
     
 	
