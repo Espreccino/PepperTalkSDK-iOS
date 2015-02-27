@@ -54,7 +54,7 @@
 - (NSError *) setLoggedInUserWithUsername:(NSString *)username
                                  fullName:(NSString *)fullName
                            profilePicture:(NSString *)profilePicture
-                          completion:(void(^)(NSError *))completion;
+                               completion:(void(^)(NSError *err))completion;
 
 /**
  Update user profile information
@@ -66,9 +66,9 @@
  @return If operation could not be completed, it returns the error. Nil if the operation could complete
  */
 - (NSError *) updateUserProfile:(NSString *)username
-                                 fullName:(NSString *)updatedFullName
-                           profilePicture:(NSString *)updatedProfilePicture
-                               completion:(void(^)(NSError *))completion;
+                       fullName:(NSString *)updatedFullName
+                 profilePicture:(NSString *)updatedProfilePicture
+                     completion:(void(^)(NSDictionary *userInfo, NSError *err))completion;
 
 /**
  Present chat session view modally
@@ -91,8 +91,8 @@
  @return An instance of UIViewController which can be shown on screen in any way.
  */
 - (UIViewController *) chatSessionWithParticipant:(NSString *)participant
-                                     sessionOptons:(NSDictionary *)options
-                                             error:(NSError **)error;
+                                    sessionOptons:(NSDictionary *)options
+                                            error:(NSError **)error;
 
 /**
  Forward the received remote notification to PepperTalk to be handled by us
@@ -113,7 +113,7 @@
  @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
  */
 - (NSError *) presentAllTopicsFilterByParticipants:(NSArray *)participants
-                      presentingViewController:(UIViewController *)presentingViewController;
+                          presentingViewController:(UIViewController *)presentingViewController;
 
 /**
  Get view which shows list of topics under which you have had conversation with participant
@@ -123,7 +123,8 @@
  @param error If an error occurs, the error parameter will be set and the return value will be nil.
  @return If operation could not be completed, it returns nil. View if the operation could complete successfully
  */
-- (UIViewController *) allTopicsFilterByParticipants:(NSArray *)participants error:(NSError **)error;
+- (UIViewController *) allTopicsFilterByParticipants:(NSArray *)participants
+                                               error:(NSError **)error;
 
 /**
  Get list of topics under which you have had conversation with these participants
@@ -148,7 +149,8 @@
      }
  }
  */
-- (NSDictionary *) allTopicsSummaryFilterByParticipants:(NSArray *)participants error:(NSError **)error;
+- (NSDictionary *) allTopicsSummaryFilterByParticipants:(NSArray *)participants
+                                                  error:(NSError **)error;
 
 /**
  Show list of participants with whom you have had conversation for this topic
@@ -169,7 +171,8 @@
  @param error If an error occurs, the error parameter will be set and the return value will be nil.
  @return If operation could not be completed, it returns nil. View if the operation could complete successfully
  */
-- (UIViewController *) allParticipantsFilterByTopics:(NSArray *)topicIds error:(NSError **)error;
+- (UIViewController *) allParticipantsFilterByTopics:(NSArray *)topicIds
+                                               error:(NSError **)error;
 
 /**
  Get list of participants with whom you have had conversation for these topics
@@ -194,7 +197,8 @@
      }
  }
  */
-- (NSDictionary *) allParticipantsSummaryFilterByTopics:(NSArray *)topicIds error:(NSError **)error;
+- (NSDictionary *) allParticipantsSummaryFilterByTopics:(NSArray *)topicIds
+                                                  error:(NSError **)error;
 
 /**
  Create a new closed group
@@ -210,7 +214,7 @@
                            name:(NSString *)groupName
                  profilePicture:(NSString *)profilePicture
                         members:(NSArray *)members
-                     completion:(void(^)(NSError *))completion;
+                     completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 /**
  Create a new public group. Public groups are open to all the users and anybody can join the group.
@@ -226,7 +230,7 @@
                                  name:(NSString *)groupName
                        profilePicture:(NSString *)profilePicture
                               members:(NSArray *)members
-                           completion:(void(^)(NSError *))completion;
+                           completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 /**
  Update group properties
@@ -240,7 +244,7 @@
 - (NSError *) updateGroupWithId:(NSString *)groupId
                            name:(NSString *)newName
                  profilePicture:(NSString *)newProfilePicture
-                     completion:(void(^)(NSError *))completion;
+                     completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 /**
  Add members to group
@@ -252,7 +256,7 @@
  */
 - (NSError *) addMembers:(NSArray *)newMembers
            toGroupWithId:(NSString *)groupId
-              completion:(void(^)(NSError *))completion;
+              completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 /**
  Remove members from group
@@ -264,47 +268,7 @@
  */
 - (NSError *) removeMembers:(NSArray *)membersToBeRemoved
             fromGroupWithId:(NSString *)groupId
-                 completion:(void(^)(NSError *))completion;
-
-/**
- Block a list of participants, users or groups. Once a participant is blocked none of the messages from that participant will be delivered to the user. If the participant is a group all messages to the group sent by anybody will be dropped.
- 
- @param participantsToBeBlocked Pass array of participants which are to be blocked
- @param completion Completion callback with results of operation
- @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
- */
-- (NSError *) blockParticipants:(NSArray *)participantsToBeBlocked
-                     completion:(void(^)(NSError *))completion;
-
-/**
- Unblock a list of participants, users or groups.
- 
- @param participantsToBeBlocked Pass array of participants which are to be unblocked
- @param completion Completion callback with results of operation
- @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
- */
-- (NSError *) unblockParticipants:(NSArray *)participantsToBeUnblocked
-                       completion:(void(^)(NSError *))completion;
-
-/**
- Mute a list of participants, users or groups. Once a participant is muted none of the messages from that participant will be notified, messages will be delivered to the users but remote notifications will be disabled.
- 
- @param participantsToBeMuted Pass array of participants which are to be muted
- @param completion Completion callback with results of operation
- @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
- */
-- (NSError *) muteParticipants:(NSArray *)participantsToBeMuted
-                    completion:(void(^)(NSError *))completion;
-
-/**
- Unmute a list of participants, users or groups.
- 
- @param participantsToBeUnmuted Pass array of participants which are to be unmuted
- @param completion Completion callback with results of operation
- @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
- */
-- (NSError *) unmuteParticipants:(NSArray *)participantsToBeUnmuted
-                      completion:(void(^)(NSError *))completion;
+                 completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 /**
  Delete group
@@ -314,7 +278,47 @@
  @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
  */
 - (NSError *) deleteGroupWithId:(NSString *)groupId
-                     completion:(void(^)(NSError *))completion;
+                     completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
+
+/**
+ Block a list of participants, users or groups. Once a participant is blocked none of the messages from that participant will be delivered to the user. If the participant is a group all messages to the group sent by anybody will be dropped.
+ 
+ @param participantsToBeBlocked Pass array of participants which are to be blocked
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) blockParticipants:(NSArray *)participantsToBeBlocked
+                     completion:(void(^)(NSDictionary *userInfo, NSError *err))completion;
+
+/**
+ Unblock a list of participants, users or groups.
+ 
+ @param participantsToBeUnblocked Pass array of participants which are to be unblocked
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) unblockParticipants:(NSArray *)participantsToBeUnblocked
+                       completion:(void(^)(NSDictionary *userInfo, NSError *err))completion;
+
+/**
+ Mute a list of participants, users or groups. Once a participant is muted none of the messages from that participant will be notified, messages will be delivered to the users but remote notifications will be disabled.
+ 
+ @param participantsToBeMuted Pass array of participants which are to be muted
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) muteParticipants:(NSArray *)participantsToBeMuted
+                    completion:(void(^)(NSDictionary *userInfo, NSError *err))completion;
+
+/**
+ Unmute a list of participants, users or groups.
+ 
+ @param participantsToBeUnmuted Pass array of participants which are to be unmuted
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) unmuteParticipants:(NSArray *)participantsToBeUnmuted
+                      completion:(void(^)(NSDictionary *userInfo, NSError *err))completion;
 
 /**
  Get unread notifications count for a topic
