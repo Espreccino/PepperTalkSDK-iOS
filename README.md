@@ -17,6 +17,9 @@ The primary purpose of the SDK is to allow developers to embed in-app chat messa
 * Real-Time Peer-To-Peer Data Stream
 * OS Chat Notifications
 * In-App Chat Notifications
+* Unread Counts
+* Block Users
+* Mute Users
 * Status Indicators
 	* Message Sent, Delivered, Read & Failure Receipts
 	* Typing Indicator
@@ -52,6 +55,8 @@ This page contains the following sections:
 	- [Participants List](#participantslist)
 	- [Topics List](#topicslist)
 	- [Unread Count](#unreadcount)
+	- [Block & Unblock Participants](#blockunblockparticipants)
+	- [Mute & Unmute Participants](#muteunmuteparticipants)
 - [API Reference](#apireference)
 - [Change Log](#changelog)
 - [Integration Examples](#examples)
@@ -646,6 +651,57 @@ We provide out of box UI for topics list. The topics list can be filtered to sho
 	- (NSDictionary *) unreadNotificationCountForTopic:(NSString *)topicId
 	                              filterByParticipants:(NSArray *)participants;
 
+<a id="blockunblockparticipants"></a> 
+##Block & Unblock Participants
+###Block Participants
+####Related API
+	/**
+	 Block a list of participants, users or groups. Once a participant is blocked none of the messages from that participant will be delivered to the user. If the participant is a group all messages to the group sent by anybody will be dropped.
+	 
+	 @param participantsToBeBlocked Pass array of participants which are to be blocked
+	 @param completion Completion callback with results of operation
+	 @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+	 */
+	- (NSError *) blockParticipants:(NSArray *)participantsToBeBlocked
+	                     completion:(void(^)(NSError *))completion;
+
+###Unblock Participants
+####Related API
+	/**
+	 Unblock a list of participants, users or groups.
+	 
+	 @param participantsToBeBlocked Pass array of participants which are to be unblocked
+	 @param completion Completion callback with results of operation
+	 @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+	 */
+	- (NSError *) unblockParticipants:(NSArray *)participantsToBeUnblocked
+	                       completion:(void(^)(NSError *))completion;
+
+<a id="muteunmuteparticipants"></a> 
+##Mute & Unmute Participants
+###Mute Participants
+####Related API
+	/**
+	 Mute a list of participants, users or groups. Once a participant is muted none of the messages from that participant will be notified, messages will be delivered to the users but remote notifications will be disabled.
+	 
+	 @param participantsToBeMuted Pass array of participants which are to be muted
+	 @param completion Completion callback with results of operation
+	 @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+	 */
+	- (NSError *) muteParticipants:(NSArray *)participantsToBeMuted
+	                    completion:(void(^)(NSError *))completion;
+
+###Unmute Participants
+####Related API
+	/**
+	 Unmute a list of participants, users or groups.
+	 
+	 @param participantsToBeUnmuted Pass array of participants which are to be unmuted
+	 @param completion Completion callback with results of operation
+	 @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+	 */
+	- (NSError *) unmuteParticipants:(NSArray *)participantsToBeUnmuted
+	                      completion:(void(^)(NSError *))completion;
 
 <a id="changelog"></a> 
 #Changelog
