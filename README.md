@@ -275,7 +275,25 @@ Profile Information is optional & can be updated later on.
 	                           name:(NSString *)groupName
 	                 profilePicture:(NSString *)profilePicture
 	                        members:(NSArray *)members
-	                     completion:(void(^)(NSError *))completion;
+	                     completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
+	                    
+###Create Public Group
+####Related API
+	/**
+	 Create a new public group. Public groups are open to all the users and anybody can join the group.
+	 
+	 @param groupId The id which you would like to use for the new group. It should contain a prefix 'grp:'. E.g 'grp:usc_friends'
+	 @param groupName The name you would like to use for the group "USC College Friends"
+	 @param profilePicture The groups profile picture url
+	 @param members Array of member's user ids.
+	 @param completion Completion callback with results of operation
+	 @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+	 */
+	- (NSError *) createPublicGroupWithId:(NSString *)groupId
+	                                 name:(NSString *)groupName
+	                       profilePicture:(NSString *)profilePicture
+	                              members:(NSArray *)members
+	                           completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 ###Update Group Info
 ####Related API
@@ -291,7 +309,7 @@ Profile Information is optional & can be updated later on.
 	- (NSError *) updateGroupWithId:(NSString *)groupId
 	                           name:(NSString *)newName
 	                 profilePicture:(NSString *)newProfilePicture
-	                     completion:(void(^)(NSError *))completion;
+	                     completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 ###Add Group Members
 ####Related API
@@ -305,7 +323,7 @@ Profile Information is optional & can be updated later on.
 	 */
 	- (NSError *) addMembers:(NSArray *)newMembers
 	           toGroupWithId:(NSString *)groupId
-	              completion:(void(^)(NSError *))completion;
+	              completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 ###Remove Group Members
 ####Related API
@@ -319,7 +337,7 @@ Profile Information is optional & can be updated later on.
 	 */
 	- (NSError *) removeMembers:(NSArray *)membersToBeRemoved
 	            fromGroupWithId:(NSString *)groupId
-	                 completion:(void(^)(NSError *))completion;
+	                 completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 ###Delete Group
 ####Related API
@@ -331,7 +349,7 @@ Profile Information is optional & can be updated later on.
 	 @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
 	 */
 	- (NSError *) deleteGroupWithId:(NSString *)groupId
-	                     completion:(void(^)(NSError *))completion;
+	                     completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 <a id="customdatasupport"></a> 
 ##Custom Data Support
@@ -663,7 +681,7 @@ We provide out of box UI for topics list. The topics list can be filtered to sho
 	 @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
 	 */
 	- (NSError *) blockParticipants:(NSArray *)participantsToBeBlocked
-	                     completion:(void(^)(NSError *))completion;
+	                     completion:(void(^)(NSDictionary *userInfo, NSError *err))completion
 
 ###Unblock Participants
 ####Related API
@@ -675,7 +693,7 @@ We provide out of box UI for topics list. The topics list can be filtered to sho
 	 @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
 	 */
 	- (NSError *) unblockParticipants:(NSArray *)participantsToBeUnblocked
-	                       completion:(void(^)(NSError *))completion;
+	                       completion:(void(^)(NSDictionary *userInfo, NSError *err))completion
 
 <a id="muteunmuteparticipants"></a> 
 ##Mute & Unmute Participants
@@ -689,7 +707,7 @@ We provide out of box UI for topics list. The topics list can be filtered to sho
 	 @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
 	 */
 	- (NSError *) muteParticipants:(NSArray *)participantsToBeMuted
-	                    completion:(void(^)(NSError *))completion;
+	                    completion:(void(^)(NSDictionary *userInfo, NSError *err))completion
 
 ###Unmute Participants
 ####Related API
@@ -701,7 +719,7 @@ We provide out of box UI for topics list. The topics list can be filtered to sho
 	 @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
 	 */
 	- (NSError *) unmuteParticipants:(NSArray *)participantsToBeUnmuted
-	                      completion:(void(^)(NSError *))completion;
+	                      completion:(void(^)(NSDictionary *userInfo, NSError *err))completion
 
 <a id="changelog"></a> 
 #Changelog
