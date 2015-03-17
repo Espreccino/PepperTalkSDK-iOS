@@ -10,15 +10,6 @@
 #define PepperTalk_PepperTalkConstants_h
 
 /**
- A reserved key which assosiates a chat session with a particular context id
- */
-extern NSString *const PTSessionOption_TopicId;
-/**
- A reserved key which assosiates a chat session with a particular context title
- */
-extern NSString *const PTSessionOption_TopicTitle;
-
-/**
  Reserved keys which are used to get values from NSDictionary returned by unreadNotificationCount calls
  */
 extern NSString *const PTUnreadCountQueryTotalUnreadCountKey;

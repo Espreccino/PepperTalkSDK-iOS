@@ -56,6 +56,13 @@
                            profilePicture:(NSString *)profilePicture
                                completion:(void(^)(NSError *err))completion;
 
+/** Log curent logged in user out
+ 
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete
+ */
+- (NSError *) logoutWithCompletion:(void(^)(NSError *err))completion;
+
 /**
  Update user profile information
  
@@ -74,24 +81,28 @@
  Present chat session view modally
  
  @param participant Pass username of the user with whom chat session is to be initiated
- @param options Pass additional configurable options for the chat session. Currently we only support PTSessionOption_TopicId and PTSessionOption_TopicTitle options.
+ @param topicId an id for the topic
+ @param topicTitle title for the topic, this will be displayed on the chat window, so ensure it contains a meaningful text representation of the topic
  @param presentingViewController Pass the view controller which will be used to present the chat session modally
  @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
  */
 - (NSError *) presentChatSessionWithParticipant:(NSString *)participant
-                                  sessionOptons:(NSDictionary *)options
+                                        topicId:(NSString *)topicId
+                                     topicTitle:(NSString *)topicTitle
                        presentingViewController:(UIViewController *)presentingViewController;
 
 /**
  Create and return chat session view
  
  @param participant Pass username of the user with whom chat session is to be initiated
- @param options Pass additional configurable options for the chat session. Currently we only support PTSessionOption_TopicId and PTSessionOption_TopicTitle options.
+ @param topicId an id for the topic
+ @param topicTitle title for the topic, this will be displayed on the chat window, so ensure it contains a meaningful text representation of the topic
  @param error If an error occurs, the error parameter will be set and the return value will be nil.
  @return An instance of UIViewController which can be shown on screen in any way.
  */
 - (UIViewController *) chatSessionWithParticipant:(NSString *)participant
-                                    sessionOptons:(NSDictionary *)options
+                                          topicId:(NSString *)topicId
+                                       topicTitle:(NSString *)topicTitle
                                             error:(NSError **)error;
 
 /**
@@ -376,14 +387,16 @@
  @param customData Data to be passed to participant client. Only supported format is JSON
  @param notificationText Text that will be shown in remote notifications. If text is set to nil, notification will not be sent out.
  @param participant The participant whose clients should get the callback with the custom data
- @param options Pass additional configurable options for the chat session. Currently we only support PTSessionOption_TopicId for this call.
+ @param topicId an id for the topic
+ @param topicTitle title for the topic, this will be displayed on the chat window, so ensure it contains a meaningful text representation of the topic
  @param completion Completion callback with results of operation
  @return If operation could not be completed, it returns the error. Nil if the operation could complete
  */
 - (NSError *) sendCustomData:(NSDictionary *)customData
                     withText:(NSString *)notificationText
                toParticipant:(NSString *)participant
-               sessionOptons:(NSDictionary *)options
+                     topicId:(NSString *)topicId
+                  topicTitle:(NSString *)topicTitle
                   completion:(void(^)(NSError * err))completion;
 
 /**
@@ -392,14 +405,16 @@
  @param customData Data to be passed to participant client. Only supported format is JSON
  @param notificationText Text that will be shown in remote notifications. If text is set to nil, notification will not be sent out.
  @param participant The participant whose clients should get the callback with the custom data
- @param options Pass additional configurable options for the chat session. Currently we only support PTSessionOption_TopicId for this call.
+ @param topicId an id for the topic
+ @param topicTitle title for the topic, this will be displayed on the chat window, so ensure it contains a meaningful text representation of the topic
  @param completion Completion callback with results of operation
  @return If operation could not be completed, it returns the error. Nil if the operation could complete.
  */
 - (NSError *) sendCustomDataInChatStream:(NSDictionary *)customData
                                  withText:(NSString *)notificationText
                             toParticipant:(NSString *)participant
-                            sessionOptons:(NSDictionary *)options
+                                 topicId:(NSString *)topicId
+                              topicTitle:(NSString *)topicTitle
                                completion:(void(^)(NSError * err))completion;
 
 @end

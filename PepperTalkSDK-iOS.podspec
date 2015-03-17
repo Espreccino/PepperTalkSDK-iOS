@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PepperTalkSDK-iOS"
-  s.version      = "1.0.16"
+  s.version      = "1.1.2"
   s.summary      = "PepperTalkSDK-iOS provides support for implementing PepperTalk in your iOS Application."
 
   s.description  = <<-DESC
@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
   s.author             = { "Himanshu Retarekar" => "himanshu@espreccino.com" }
   # Or just: s.author    = "Espreccino"
   # s.authors            = { "Espreccino" => "info@espreccino.com" }
-  s.social_media_url   = "https://www.linkedin.com/in/hretarekar"
+  s.social_media_url   = "https://twitter.com/getpeppertalk"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
