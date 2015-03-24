@@ -89,6 +89,8 @@
 	
 	<option value="//api/name/handleRemoteNotification:presentingViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- handleRemoteNotification:presentingViewController:</option>
 	
+	<option value="//api/name/initialiseWithUsername:fullName:profilePicture:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- initialiseWithUsername:fullName:profilePicture:completion:</option>
+	
 	<option value="//api/name/logoutWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- logoutWithCompletion:</option>
 	
 	<option value="//api/name/muteParticipants:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- muteParticipants:completion:</option>
@@ -104,8 +106,6 @@
 	<option value="//api/name/sendCustomData:withText:toParticipant:topicId:topicTitle:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- sendCustomData:withText:toParticipant:topicId:topicTitle:completion:</option>
 	
 	<option value="//api/name/sendCustomDataInChatStream:withText:toParticipant:topicId:topicTitle:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- sendCustomDataInChatStream:withText:toParticipant:topicId:topicTitle:completion:</option>
-	
-	<option value="//api/name/setLoggedInUserWithUsername:fullName:profilePicture:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- setLoggedInUserWithUsername:fullName:profilePicture:completion:</option>
 	
 	<option value="//api/name/unblockParticipants:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- unblockParticipants:completion:</option>
 	
@@ -195,6 +195,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleRemoteNotification:presentingViewController:">handleRemoteNotification:presentingViewController:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initialiseWithUsername:fullName:profilePicture:completion:">initialiseWithUsername:fullName:profilePicture:completion:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logoutWithCompletion:">logoutWithCompletion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/muteParticipants:completion:">muteParticipants:completion:</a></span></li>
@@ -210,8 +212,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendCustomData:withText:toParticipant:topicId:topicTitle:completion:">sendCustomData:withText:toParticipant:topicId:topicTitle:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendCustomDataInChatStream:withText:toParticipant:topicId:topicTitle:completion:">sendCustomDataInChatStream:withText:toParticipant:topicId:topicTitle:completion:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLoggedInUserWithUsername:fullName:profilePicture:completion:">setLoggedInUserWithUsername:fullName:profilePicture:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unblockParticipants:completion:">unblockParticipants:completion:</a></span></li>
 	
@@ -324,7 +324,7 @@ between two or more endpoints.</p>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setLoggedInUserWithUsername:fullName:profilePicture:completion:">&ndash;&nbsp;setLoggedInUserWithUsername:fullName:profilePicture:completion:</a></code>
+		<code><a href="#//api/name/initialiseWithUsername:fullName:profilePicture:completion:">&ndash;&nbsp;initialiseWithUsername:fullName:profilePicture:completion:</a></code>
 	</span>
 	
 	
@@ -747,7 +747,7 @@ between two or more endpoints.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A singleton instance of PepperTalk class. Use this instance to use Pepper Talk.</p>
+		<p>A singleton instance of PepperTalk class. Use this instance to initialise &amp; then use Pepper Talk.</p>
 	</div>
 	
 	
@@ -1559,6 +1559,72 @@ Pass nil to disable filter</p></dd>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/initialiseWithUsername:fullName:profilePicture:completion:" title="initialiseWithUsername:fullName:profilePicture:completion:"></a>
+	<h3 class="subsubtitle method-title">initialiseWithUsername:fullName:profilePicture:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialise the SDK with logged in user&rsquo;s details</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSError *)initialiseWithUsername:(NSString *)<em>username</em> fullName:(NSString *)<em>fullName</em> profilePicture:(NSString *)<em>profilePicture</em> completion:(void ( ^ ) ( NSError *err ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The logged in user&rsquo;s username</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fullName</em></dt>
+			<dd><p>The logged in user&rsquo;s full name</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>profilePicture</em></dt>
+			<dd><p>The logged in user&rsquo;s profile picture url</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion callback with results of operation</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If operation could not be completed, it returns the error. Nil if the operation could complete</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PepperTalk.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/logoutWithCompletion:" title="logoutWithCompletion:"></a>
 	<h3 class="subsubtitle method-title">logoutWithCompletion:</h3>
 	
@@ -2061,72 +2127,6 @@ Max allowed size for custom data is 2KB.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/setLoggedInUserWithUsername:fullName:profilePicture:completion:" title="setLoggedInUserWithUsername:fullName:profilePicture:completion:"></a>
-	<h3 class="subsubtitle method-title">setLoggedInUserWithUsername:fullName:profilePicture:completion:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Pass logged in user information to PepperTalk</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSError *)setLoggedInUserWithUsername:(NSString *)<em>username</em> fullName:(NSString *)<em>fullName</em> profilePicture:(NSString *)<em>profilePicture</em> completion:(void ( ^ ) ( NSError *err ))<em>completion</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>username</em></dt>
-			<dd><p>The logged in user&rsquo;s username</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>fullName</em></dt>
-			<dd><p>The logged in user&rsquo;s full name</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>profilePicture</em></dt>
-			<dd><p>The logged in user&rsquo;s profile picture url</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>completion</em></dt>
-			<dd><p>Completion callback with results of operation</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>If operation could not be completed, it returns the error. Nil if the operation could complete</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">PepperTalk.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/unblockParticipants:completion:" title="unblockParticipants:completion:"></a>
 	<h3 class="subsubtitle method-title">unblockParticipants:completion:</h3>
 	
@@ -2514,7 +2514,7 @@ Max allowed size for custom data is 2KB.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Espreccino. All rights reserved. (Last updated: 2015-03-17)</span><br />
+						<p><span class="copyright">&copy; 2015 Espreccino. All rights reserved. (Last updated: 2015-03-24)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
