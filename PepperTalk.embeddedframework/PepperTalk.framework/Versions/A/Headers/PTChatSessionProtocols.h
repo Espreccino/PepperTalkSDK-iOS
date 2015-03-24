@@ -36,6 +36,9 @@
 /** Set action toolbar's tint color */
 @property (strong, nonatomic) UIColor *actionToolbarTintColor;
 
+/** Set action toolbar's custom buttons. Pass NSArray of UIToolBarButtonItems */
+@property (strong, nonatomic) NSArray *actionToolbarButtons;
+
 /** Set a custom renderer object which confirms to PTChatSessionCustomDataRendererProtocol in order
  to provide view for custom data in chat stream
  */

@@ -56,22 +56,4 @@ extern NSString *const PTReceivedCustomDataNotification_MsgData_TopicIdKey;
 extern NSString *const PTReceivedCustomDataNotification_MsgData_TopicTitleKey;
 extern NSString *const PTReceivedCustomDataNotification_CustomDataKey;
 
-/**
- Notification with name PTActionBarParticipantInfoNotification is posted to notify observers about participant info selection from action bar in chat screen. Notification userInfo has following format:
- {
-    PTActionBarParticipantInfoNotification_participantKey : # participant id of the chat session
- }
- */
-extern NSString *const PTActionBarParticipantInfoNotification;
-extern NSString *const PTActionBarParticipantInfoNotification_participantKey;
-
-/**
- Notification with name PTActionBarParticipantInfoNotification is posted to notify observers about topic info selection from action bar in chat screen. Notification userInfo has following format:
- {
-    PTActionBarTopicInfoNotification_topicIdKey : # topic id of the chat session
- }
- */
-extern NSString *const PTActionBarTopicInfoNotification;
-extern NSString *const PTActionBarTopicInfoNotification_topicIdKey;
-
 #endif

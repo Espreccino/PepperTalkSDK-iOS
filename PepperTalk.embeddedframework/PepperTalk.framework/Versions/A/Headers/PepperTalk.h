@@ -38,12 +38,12 @@
  PepperTalk instance creation
  
  Type of Result - PepperTalk singleton instance.
- @return A singleton instance of PepperTalk class. Use this instance to use Pepper Talk.
+ @return A singleton instance of PepperTalk class. Use this instance to initialise & then use Pepper Talk.
  */
 + (instancetype)sharedInstance;
 
 /**
- Pass logged in user information to PepperTalk
+ Initialise the SDK with logged in user's details
  
  @param username The logged in user's username
  @param fullName The logged in user's full name
@@ -51,10 +51,10 @@
  @param completion Completion callback with results of operation
  @return If operation could not be completed, it returns the error. Nil if the operation could complete
  */
-- (NSError *) setLoggedInUserWithUsername:(NSString *)username
-                                 fullName:(NSString *)fullName
-                           profilePicture:(NSString *)profilePicture
-                               completion:(void(^)(NSError *err))completion;
+- (NSError *) initialiseWithUsername:(NSString *)username
+                            fullName:(NSString *)fullName
+                      profilePicture:(NSString *)profilePicture
+                          completion:(void(^)(NSError *err))completion;
 
 /** Log curent logged in user out
  
