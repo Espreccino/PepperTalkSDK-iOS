@@ -37,5 +37,4 @@ The primary purpose of the SDK is to allow developers to embed in-app chat messa
 	* Navigation Bar Color
 	* Custom action buttons on navigation bar
 
-For more information please refer to [Developers page](http://developers.getpeppertalk.com/ios)
-In case you have any question regarding PepperTalk SDK, please contact us at hi@espreccino.com
+For more information please refer to [Developers page](http://developers.getpeppertalk.com/ios)In case you have any question regarding PepperTalk SDK, please contact us at hi@espreccino.com
