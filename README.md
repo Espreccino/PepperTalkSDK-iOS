@@ -195,19 +195,20 @@ Profile Information is optional & can be updated later on.
 
 ####Related API
 	/**
-	Pass logged in user information to PepperTalk
-	@param username The logged in user's username
- 	@param fullName The logged in user's full name
- 	@param profilePicture The logged in user's profile picture url
- 	@param completion Completion callback with results of operation
- 	@return If operation could not be completed, it returns the error. Nil if the operation could complete
- 	*/
-	- (NSError *) setLoggedInUserWithUsername:(NSString *)username
-                                 fullName:(NSString *)fullName
-                           profilePicture:(NSString *)profilePicture
-                          completion:(void(^)(NSError *))completion;
+	 Initialise the SDK with logged in user's details
+	 
+	 @param username The logged in user's username
+	 @param fullName The logged in user's full name
+	 @param profilePicture The logged in user's profile picture url
+	 @param completion Completion callback with results of operation
+	 @return If operation could not be completed, it returns the error. Nil if the operation could complete
+	 */
+	- (NSError *) initialiseWithUsername:(NSString *)username
+	                            fullName:(NSString *)fullName
+	                      profilePicture:(NSString *)profilePicture
+	                          completion:(void(^)(NSError *err))completion;
 ####Code Snippet
-	NSError *err = [[PepperTalk sharedInstance] setLoggedInUserWithUsername:@"USERNAME" fullName:@"DISPLAY_NAME" profilePicture:@"DISPLAY_PIC_URL" completion:^(NSError *loginError) {
+	NSError *err = [[PepperTalk sharedInstance] initialiseWithUsername:@"USERNAME" fullName:@"DISPLAY_NAME" profilePicture:@"DISPLAY_PIC_URL" completion:^(NSError *loginError) {
     
         if(loginError) {
             //Could not login succesfully
@@ -518,6 +519,16 @@ PepperTalk lets client app customize & skin the UI of the chat session.
 ####Code Snippet
 	[PepperTalk sharedInstance].globalConfigurator. actionToolbarBarTintColor = [UIColor redColor];
 	[PepperTalk sharedInstance].globalConfigurator. actionToolbarTintColor = [UIColor redColor];
+
+###Navigation Bar Toolbar Buttons
+####Related API
+	/** Set action toolbar's custom buttons. Pass NSArray of UIToolBarButtonItems */
+	@property (strong, nonatomic) NSArray *actionToolbarButtons;
+####Code Snippet
+	UIBarButtonItem *buttonItem1 = [[UIBarButtonItem alloc] initWithTitle:@"test1" style:UIBarButtonItemStylePlain target:self action:@selector(test1buttonpressed:)];
+	UIBarButtonItem *buttonItem2 = [[UIBarButtonItem alloc] initWithTitle:@"test2" style:UIBarButtonItemStylePlain target:self action:@selector(test2buttonpressed:)];
+	[PepperTalk sharedInstance].globalConfigurator.actionToolbarButtons = @[buttonItem1, buttonItem2];
+
 
 <a id="photolocationsharing"></a> 
 ##Photo and Location Sharing Via Chat
