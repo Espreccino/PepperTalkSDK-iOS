@@ -9,10 +9,16 @@
 #import <Foundation/Foundation.h>
 
 // Domains for PTErrors
+extern NSString *const kPTServerErrorDomain;
+extern NSString *const kPTHttpErrorDomain;
 extern NSString *const kPTGeneralErrorDomain;
+
 
 /** Base value of errors */
 typedef NS_ENUM(NSInteger, PTErrorBases) {
+    
+    PTHttpErrorBase      = 100,
+    PTHttpErrorMax       = 999,
     
     PTGeneralErrorBase   = 2000,
     PTGeneralErrorMax    = 2999,
