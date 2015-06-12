@@ -28,6 +28,8 @@
 /** Query loggedInParticipant to check for valid login credentials*/
 @property (nonatomic, readonly) NSString *loggedInParticipant;
 
+@property (nonatomic) BOOL initialised;
+
 /** Pass your Google API Key to enable Location sharing. If not set, location sharing option will not be available */
 @property (nonatomic, copy) NSString *googleAPIKey;
 
@@ -330,6 +332,26 @@
  */
 - (NSError *) unmuteParticipants:(NSArray *)participantsToBeUnmuted
                       completion:(void(^)(NSDictionary *userInfo, NSError *err))completion;
+
+/**
+ Get information for a user.
+ 
+ @param userId The id of the user of which you would like to get information
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) getUserInfo:(NSString *)userId
+               completion:(void(^)(NSDictionary *userInfo, NSError *err))completion;
+
+/**
+ Get information for a group.
+ 
+ @param groupId The id of the group of which you would like to get information
+ @param completion Completion callback with results of operation
+ @return If operation could not be completed, it returns the error. Nil if the operation could complete successfully
+ */
+- (NSError *) getGroupInfo:(NSString *)groupId
+                completion:(void(^)(NSDictionary *groupInfo, NSError *err))completion;
 
 /**
  Get unread notifications count for a topic
