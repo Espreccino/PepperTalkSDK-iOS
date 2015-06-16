@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PepperTalkSDK-iOS"
-  s.version      = "1.1.6"
+  s.version      = "1.1.7"
   s.summary      = "PepperTalkSDK-iOS provides support for implementing PepperTalk in your iOS Application."
 
   s.description  = <<-DESC
