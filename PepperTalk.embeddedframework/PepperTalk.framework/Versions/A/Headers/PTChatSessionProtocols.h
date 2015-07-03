@@ -24,6 +24,12 @@
  */
 @protocol PTChatSessionGlobalConfigurationProtocol <NSObject>
 
+/** Set titleTextColor to customize the chat screen's title text color */
+@property (strong, nonatomic) UIColor *titleTextColor;
+
+/** Set subtitleTextColor to customize the chat screen's subTitle text color */
+@property (strong, nonatomic) UIColor *subtitleTextColor;
+
 /** Set outgoingBubbleColor to customize the outgoing message's bubble color */
 @property (strong, nonatomic) UIColor *outgoingBubbleColor;
 
